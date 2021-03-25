@@ -2,7 +2,7 @@
 <html>
 <head>
 	
-	<title>Korey's LeafLet Fiddle Page</title>
+	<title>Korey's GeoJSON Fiddle Page</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,10 @@
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-    <style>
+	<script type="text/javascript" src="Leaflet\leaflet.ajax.min.js"></script>
+	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script>
+	<script type="text/javascript" src="Kobo/TestGeoJSON.json"></script>
+	<style>
         html, body {
             height: 100%;
             margin: 0;
@@ -31,7 +34,7 @@
 <div id="mapid"></div>
 <script>
 
-	var mymap = L.map('mapid').setView([44.4, -78.5], 10);
+	var mymap = L.map('mapid').setView([44.3, -78.5], 9);
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -42,23 +45,39 @@
 		zoomOffset: -1
 	}).addTo(mymap);
 
-	L.marker([51.5, -0.09]).addTo(mymap)
-		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+	var geojsonLayer = new L.GeoJSON.ajax("Kobo\TestGeoJSON.json");       
+	geojsonLayer.addTo(mymap);
 
-	L.circle([51.508, -0.11], 500, {
-		color: 'red',
-		fillColor: '#f03',
-		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("I am a circle.");
+	var kobolayer = new L.geoJson();
+	kobolayer.addTo(map);
 
-	L.polygon([
-		[51.509, -0.08],
-		[51.503, -0.06],
-		[51.51, -0.047]
-	]).addTo(mymap).bindPopup("I am a polygon.");
+	$.ajax({
+	dataType: "json",
+	url: "Kobo/TestGeoJSON.json",
+	success: function(data) {
+		$(data.features).each(function(key, data) {
+			district_boundary.addData(data);
+		});
+	}
+	}).error(function() {});
+
+	// L.marker([51.5, -0.09]).addTo(mymap)
+	// 	.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+
+	// L.circle([51.508, -0.11], 500, {
+	// 	color: 'red',
+	// 	fillColor: '#f03',
+	// 	fillOpacity: 0.5
+	// }).addTo(mymap).bindPopup("I am a circle.");
+
+	// L.polygon([
+	// 	[51.509, -0.08],
+	// 	[51.503, -0.06],
+	// 	[51.51, -0.047]
+	// ]).addTo(mymap).bindPopup("I am a polygon.");
 
 
-	var popup = L.popup();
+	// var popup = L.popup();
 
 	function onMapClick(e) {
 		popup
