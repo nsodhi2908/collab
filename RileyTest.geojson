@@ -1,0 +1,23 @@
+[
+{
+"type": "FeatureCollection",
+"name": "Fruit Tree Map",
+"features": [
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-79.482061, 43.997594, 0.0]}, "properties": {"start": "2021-03-24T17:18:01.015-04:00", "end": "2021-03-24T17:18:16.027-04:00", "New_Question": "tree", "_id": 167361540, "_uuid": "3f497aae-c8e7-4e2d-99be-69249c64ad24", "_submission_time": "2021-03-24T21:18:26", "_status": "submitted_via_web"}}
+]
+},
+{
+"type": "FeatureCollection",
+"name": "Fruit Tree Map",
+"features": [
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-79.49294, 44.005091, 0.0]}, "properties": {"start": "2021-03-24T17:18:16.046-04:00", "end": "2021-03-24T17:18:25.596-04:00", "New_Question": "tree", "_id": 167361542, "_uuid": "98cf7ca8-399c-43ee-a285-c846529496dc", "_submission_time": "2021-03-24T21:18:27", "_status": "submitted_via_web"}}
+]
+},
+{
+"type": "FeatureCollection",
+"name": "Fruit Tree Map",
+"features": [
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-79.480611, 44.000497, 0.0]}, "properties": {"start": "2021-03-29T16:45:30.294-04:00", "end": "2021-03-29T16:46:04.056-04:00", "Name_this_Tree": "Test Tree (Probably not edible)", "Point_and_shoot_Use_mera_to_take_a_photo": "Ash_Tree_-_geograph.org.uk_-_590710-16_45_58.jpg", "Enter_a_date": "2021-03-29", "_id": 168404157, "_uuid": "cd94bbdb-1014-4d95-ba7a-77dd6e89a4fb", "_submission_time": "2021-03-29T20:46:16", "_status": "submitted_via_web"}}
+]
+}
+]
