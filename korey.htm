@@ -48,9 +48,29 @@
 		zoomOffset: -1
 	}).addTo(mymap);
 
-	var geojsonLayer = new L.GeoJSON.AJAX("Kobo/march30_2.geojson");
+	// var geojsonLayer = new L.GeoJSON.AJAX("Kobo/march30_2.geojson")
+	// geojsonLayer.addTo(mymap);
+
+	var geojsonLayer = new L.GeoJSON.AJAX("Kobo/march30_2.geojson", {
+		onEachFeature: function (feature, layer) {
+			layer.bindPopup('<h1>'+feature.properties.Tree_Type+'</h1>');
+  }});
 	geojsonLayer.addTo(mymap);
 
+
+
+	// var layerGroup = L.geoJSON.AJAX("Kobo/march30_2.geojson", {
+  	// onEachFeature: function (feature, layer) {
+    // layer.bindPopup('<h1>'+feature.Tree_Type+'</h1>');
+  	// }
+	// });
+	// layerGroup.addTo(mymap);
+
+	// var layerGroup = L.geoJSON.AJAX(data, {
+ 	// onEachFeature: function (feature, layer) {
+    // layer.bindPopup('<h1>'+feature.properties.f1+'</h1><p>name: '+feature.properties.f2+'</p>');
+ 	//  }
+	// }).addTo(mymap);
 	var popup = L.popup();
 
 	function onMapClick(e) {
