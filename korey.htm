@@ -7,13 +7,16 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" /> -->
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-	<script type="text/javascript" src="Leaflet\leaflet.ajax.min.js"></script>
-	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script>
-	<script type="text/javascript" src="Kobo/TestGeoJSON.json"></script>
+	<!-- <script type="text/javascript" src="Leaflet\leaflet.ajax.min.js"></script> -->
+	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script> <!-- Needed -->
+	<!-- <script type="text/javascript" src="Leaflet\ajax.js"></script> -->
+	<!-- <script type="text/javascript" src="march30_4.json"></script> -->
+	<!-- <script type="text/javascript" src="Kobo\march30_2.json"></script> -->
+
 	<style>
         html, body {
             height: 100%;
@@ -45,48 +48,20 @@
 		zoomOffset: -1
 	}).addTo(mymap);
 
-	var geojsonLayer = new L.GeoJSON.ajax("Kobo\TestGeoJSON.json");       
+	var geojsonLayer = new L.GeoJSON.AJAX("Kobo/march30_2.geojson");
 	geojsonLayer.addTo(mymap);
 
-	var kobolayer = new L.geoJson();
-	kobolayer.addTo(map);
-
-	$.ajax({
-	dataType: "json",
-	url: "Kobo/TestGeoJSON.json",
-	success: function(data) {
-		$(data.features).each(function(key, data) {
-			district_boundary.addData(data);
-		});
-	}
-	}).error(function() {});
-
-	// L.marker([51.5, -0.09]).addTo(mymap)
-	// 	.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-	// L.circle([51.508, -0.11], 500, {
-	// 	color: 'red',
-	// 	fillColor: '#f03',
-	// 	fillOpacity: 0.5
-	// }).addTo(mymap).bindPopup("I am a circle.");
-
-	// L.polygon([
-	// 	[51.509, -0.08],
-	// 	[51.503, -0.06],
-	// 	[51.51, -0.047]
-	// ]).addTo(mymap).bindPopup("I am a polygon.");
-
-
-	// var popup = L.popup();
+	var popup = L.popup();
 
 	function onMapClick(e) {
 		popup
 			.setLatLng(e.latlng)
-			.setContent("You clicked the map at " + e.latlng.toString())
+			.setContent("Would you like to add a tree? Link to Form submission")
 			.openOn(mymap);
 	}
 
 	mymap.on('click', onMapClick);
+
 
 </script>
 
