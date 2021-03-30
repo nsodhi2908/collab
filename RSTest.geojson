@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "Fruit Tree Map",
+"features": [
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-79.482061, 43.997594, 0.0]}, "properties": {"start": "2021-03-30T09:10:53.436-04:00", "end": "2021-03-30T09:11:01.621-04:00", "Record your current location": "43.997594 -79.482061 0 756", "Name this Tree": "apple", "Enter a date": "2021-03-30", "_id": 168566008, "_uuid": "3b6faa31-cb68-4f27-afd5-e8e03b097cb2", "_submission_time": "2021-03-30T13:11:12", "_status": "submitted_via_web"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-79.477742, 44.003245, 0.0]}, "properties": {"start": "2021-03-30T09:11:01.646-04:00", "end": "2021-03-30T09:11:12.873-04:00", "Record your current location": "44.003245 -79.477742 0 0", "Name this Tree": "pear", "Enter a date": "2021-03-30", "_id": 168566063, "_uuid": "6bad6548-7b60-47af-a957-55aa72ae5db3", "_submission_time": "2021-03-30T13:11:22", "_status": "submitted_via_web"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-79.483384, 43.989036, 0.0]}, "properties": {"start": "2021-03-30T09:11:12.899-04:00", "end": "2021-03-30T09:11:24.178-04:00", "Record your current location": "43.989036 -79.483384 0 0", "Name this Tree": "orange", "Enter a date": "2021-03-30", "_id": 168566129, "_uuid": "d845d687-a152-47e4-bd20-4fc4fd0f41eb", "_submission_time": "2021-03-30T13:11:34", "_status": "submitted_via_web"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-79.494561, 43.999684, 0.0]}, "properties": {"start": "2021-03-30T09:11:24.194-04:00", "end": "2021-03-30T09:11:39.204-04:00", "Record your current location": "43.999684 -79.494561 0 0", "Name this Tree": "fruit", "Enter a date": "2021-03-30", "_id": 168566235, "_uuid": "3322b75b-b5a8-4a64-9f29-304091fbcf01", "_submission_time": "2021-03-30T13:11:49", "_status": "submitted_via_web"}}
+]
+}
