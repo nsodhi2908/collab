@@ -57,7 +57,7 @@
             <li><a href="spatial.htm">Spatial Analysis</a></li>
             <li><a href="survey.htm">Survey</a></li>
             <li><a href="contact.htm">Crew</a></li>
-            <li><a href="intern.htm">Intern With Us!</a></li>
+            <li><a href="intern.htm">Add A Tree!</a></li>
         </ul>
     </nav>
     <!-- End Owner: Korey Hayes -->
@@ -89,12 +89,14 @@
 	// var geojsonLayer = new L.GeoJSON.AJAX("Kobo/march30_2.geojson")
 	// geojsonLayer.addTo(mymap);
 
-	var geojsonLayer = new L.GeoJSON.AJAX("Kobo/march30_2.geojson", {
+	var geojsonLayer = new L.GeoJSON.AJAX("RSTestwPhoto.geojson", {
 		onEachFeature: function (feature, layer) {
-			layer.bindPopup('<h1>'+feature.properties.Tree_Type+'</h1>');
+			layer.bindPopup('<h1>'+feature.properties.Name_this_Tree+'</h1><h4>'+feature.properties.Point_and_shoot_Use_mera_to_take_a_photo+'</h4>');
   }});
 	geojsonLayer.addTo(mymap);
-
+//It just shows that there was a photo saved and the name of the file. If we can find the location of the saved data this would be way better.
+//the geoJSON stores only text
+// geographic java script object "notation"
 
 
 	// var layerGroup = L.geoJSON.AJAX("Kobo/march30_2.geojson", {
@@ -114,7 +116,7 @@
 	function onMapClick(e) {
 		popup
 			.setLatLng(e.latlng)
-			.setContent("Would you like to add a tree? Link to Form submission")
+			.setContent("Would you like to add a tree? Link to Form submission")   //This here is just the onclick popup for anywhere on the map
 			.openOn(mymap);
 	}
 
@@ -127,6 +129,7 @@
 
 </body>
 </html>
-
+<!--It looks like we didn't need either of these
+Default is sufficient apparently-->
 <!-- from website token - >  pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw
     generated token - >      pk.eyJ1Ijoicmlsc3dlZW4iLCJhIjoiY2ttbnoyYmhyMDFueDJucmt1eXFtdzFzaSJ9.6_fVTtxydb8Boi0JX_wDdQ -->
