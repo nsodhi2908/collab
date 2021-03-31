@@ -13,28 +13,66 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 	<!-- <script type="text/javascript" src="Leaflet\leaflet.ajax.min.js"></script> -->
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script> <!-- Needed -->
+	<link rel="stylesheet" href="css.css">
+	<script type="text/javascript" src="koreystuff/js.js"></script>
 	<!-- <script type="text/javascript" src="Leaflet\ajax.js"></script> -->
 	<!-- <script type="text/javascript" src="march30_4.json"></script> -->
 	<!-- <script type="text/javascript" src="Kobo\march30_2.json"></script> -->
-
-	<style>
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-        #mapid {
-            height: 100%;
-            width: 100%;
-        }
-    </style>
-
 	
 </head>
 <body>
-
-
-
+	<div id="ac-wrapper">
+		<div id="popup">
+			<center>
+				<h2>Read Disclaimer and Accept</h2>
+				<h4>to continue on to Fruit Tree</h4>
+				<p>The data on this map is populated by the public, who may or may not be experts. 
+					The creators and/or hosts of this map, and the data, shall not be held responsible for 
+					any incorrect data that may be displayed by the map. It is ultimately your responsibility
+					as the user of this map to determine whether a fruit should be harvested and/or ingested. \
+					The creators and/or hosts of this map, and the data, shall not be held responsible for
+					users of this map that trespass on private property. This map is intended to be used
+					for public access ONLY. Any trees that may seem to be on private property should not be harvested
+					without direct permission from the landowner or you could face consequences that the creators/hosts
+					of this map and data shall not be liable for.
+				</p>
+				<input type="submit" name="submit" value="Accept" onClick="PopUp('hide')" />
+			</center>
+		</div>
+	</div>
+    <!-- 
+        - Owner : Korey Hayes
+        - Date  : Nov 24
+        - From  : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ -->
+    <!--Navbar-->
+    <nav class = "navDrop">
+        <a href="javascript:void(0);" onclick="clickDrop()">Menu</a>
+        <ul class = "link" id="navLinks">
+            <li><a class="active" href="index.htm">Main</a></li> 
+            <li><a href="database.htm">Databases</a></li>
+            <li><a href="geodesy.htm">Geodesy</a></li>
+            <li><a href="geoviz.htm">Geoviz'</a></li>
+            <li><a href="psp.htm">Programming</a></li>
+            <li><a href="remote.htm">Remote Sensing</a></li>
+            <li><a href="spatial.htm">Spatial Analysis</a></li>
+            <li><a href="survey.htm">Survey</a></li>
+            <li><a href="contact.htm">Crew</a></li>
+            <li><a href="intern.htm">Intern With Us!</a></li>
+        </ul>
+    </nav>
+    <!-- End Owner: Korey Hayes -->
 <div id="mapid"></div>
+<script type="text/javascript">
+	function PopUp(hideOrshow) {
+		if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
+		else document.getElementById('ac-wrapper').removeAttribute('style');
+	}
+	// window.onload = function () {
+	// 	setTimeout(function () {
+	// 		PopUp('show');
+	// 	}, 5000);
+	// }
+	</script>
 <script>
 
 	var mymap = L.map('mapid').setView([44.3, -78.5], 9);

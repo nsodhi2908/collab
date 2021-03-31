@@ -1,0 +1,112 @@
+body,h1,h2,h3,h4,h5,h6, header, footer {font-family: "Lato", sans-serif}
+
+#mapid {
+    height: 94%;
+    width: 100%;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+a {
+    color: white;
+    text-decoration: none;
+    /* font-weight:bold; */
+  }
+  a:hover {
+    font-weight:bold;
+  }
+
+  .footer {
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+.image, header, aside, nav, li, a, .box, .imgcolumn1, .imgcolumn3, .top{ 
+width: 100%; 
+}
+/* Navigation Bar */
+
+nav, ul, .link, li, .active, .navdrop, #navlinks {text-align: center;}
+
+nav {
+background-color: #4e6d26;
+}
+
+ul {
+margin:0;
+padding:0;
+overflow: hidden;
+}
+
+.link{
+    list-style-type: none;          
+}
+
+li a {
+    float:left;
+}
+/* change the colour of the active link and make it all caps*/
+.active{background-color: #334719;  
+text-transform: uppercase;}           
+
+/* Style the navigation menu */
+.navDrop {
+overflow: hidden;
+background-color: #4e6d26;
+/* position: relative; */
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.navDrop #navLinks {
+display: none;
+}
+
+/* Style navigation menu links */
+.navDrop a {
+color: white;                       /* changes from default blue */
+padding: 10px;
+text-decoration: none;                /* removes the underline */
+display: block;
+}
+.navDrop a:hover {
+background-color: #9dcc60;          /* lighter background on hover */
+}
+
+/* End of Navigation Bar */
+
+header{
+    font-size: 50px;
+    float: right;
+    text-align:right;
+    background-color: #4e6d26;
+    }
+
+#ac-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,.6);
+    z-index: 1001;
+}
+
+#popup {
+    width: 555px;
+    height: 375px;
+    background: #FFFFFF;
+    border: 5px solid #000;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    box-shadow: #64686e 0px 0px 3px 3px;
+    -moz-box-shadow: #64686e 0px 0px 3px 3px;
+    -webkit-box-shadow: #64686e 0px 0px 3px 3px;
+    position: relative;
+    top: 150px; left: 375px;
+}
