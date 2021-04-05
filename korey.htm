@@ -89,9 +89,9 @@
 	// var geojsonLayer = new L.GeoJSON.AJAX("Kobo/march30_2.geojson")
 	// geojsonLayer.addTo(mymap);
 
-	var geojsonLayer = new L.GeoJSON.AJAX("RSTestwPhoto.geojson", {
+	var geojsonLayer = new L.GeoJSON.AJAX("Kobo/march30_2.geojson", {
 		onEachFeature: function (feature, layer) {
-			layer.bindPopup('<h1>'+feature.properties.Name_this_Tree+'</h1><h4>'+feature.properties.Point_and_shoot_Use_mera_to_take_a_photo+'</h4>');
+			layer.bindPopup('<h1>'+feature.properties.Tree_Type+'</h1>');
   }});
 	geojsonLayer.addTo(mymap);
 //It just shows that there was a photo saved and the name of the file. If we can find the location of the saved data this would be way better.
