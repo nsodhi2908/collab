@@ -15,9 +15,9 @@
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script> <!-- Needed -->
 	<link rel="stylesheet" href="css.css">
 	<script type="text/javascript" src="koreystuff/js.js"></script>
-	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+	<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+	<!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
 	<!-- <script type="text/javascript" src="https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson"></script> -->
 	<!-- <script type="text/javascript" src="Leaflet\ajax.js"></script> -->
 	<!-- <script type="text/javascript" src="march30_4.json"></script> -->
@@ -93,37 +93,21 @@
 		zoomOffset: -1
 	}).addTo(mymap);
 
-	// // USING JQUERY (AJAX)
-	// var settings = {
-	// "url": "https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson",
-	// "method": "GET",
-	// "timeout": 0,
-	// "headers": {
-	// 	"Access-Control-Allow-Origin": "*",
-	// 	"Authorization": "Basic a29oYXllOkd1bmp1aWNlNTA5"
-	// },
-	// };
 
-	// $.ajax(settings).done(function (response) {
-	// console.log(response);
-	// });
+	// USING FETCH
+	var myHeaders = new Headers();
+	myHeaders.append("Authorization", "Basic a29oYXllOkd1bmp1aWNlNTA5");
 
+	var requestOptions = {
+	method: 'GET',
+	headers: myHeaders,
+	redirect: 'follow'
+	};
 
-	// // USING FETCH
-	// var myHeaders = new Headers();
-	// myHeaders.append("Authorization", "Basic a29oYXllOkd1bmp1aWNlNTA5");
-	// myHeaders.append("Access-Control-Allow-Origin", "*");
-
-	// var requestOptions = {
-	// method: 'GET',
-	// headers: myHeaders,
-	// redirect: 'follow'
-	// };
-
-	// fetch("https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson", requestOptions)
-	// .then(response => response.text())
-	// .then(result => console.log(result))
-	// .catch(error => console.log('error', error));
+	fetch("https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson", requestOptions)
+	.then(response => response.text())
+	.then(result => console.log(result))
+	.catch(error => console.log('error', error));
 
 
 //  //  USING xhr
