@@ -11,17 +11,22 @@
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-	<!-- <script type="text/javascript" src="Leaflet\leaflet.ajax.min.js"></script> -->
+	<script type="text/javascript" src="Leaflet\leaflet.ajax.min.js"></script>
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script> <!-- Needed -->
 	<link rel="stylesheet" href="css.css">
 	<script type="text/javascript" src="koreystuff/js.js"></script>
-	<script type="text/javascript" src="https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=json"></script>
+	<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+	<!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+	<!-- <script type="text/javascript" src="https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson"></script> -->
 	<!-- <script type="text/javascript" src="Leaflet\ajax.js"></script> -->
 	<!-- <script type="text/javascript" src="march30_4.json"></script> -->
 	<!-- <script type="text/javascript" src="Kobo\march30_2.json"></script> -->
+	<script type="text/python" src="request.py"></script>
 	
 </head>
 <body>
+
 	<div id="ac-wrapper">
 		<div id="popup">
 			<center>
@@ -74,6 +79,17 @@
 	// 	}, 5000);
 	// }
 	</script>
+
+		<!-- <script>
+			function goPython(){
+				$.ajax({
+				  url: "request.py",
+				 context: document.body
+				}).done(function() {
+				 alert('finished python script');;
+				});
+			}
+		</script> -->
 <script>
 
 	var mymap = L.map('mapid').setView([44.3, -78.5], 9);
@@ -87,35 +103,22 @@
 		zoomOffset: -1
 	}).addTo(mymap);
 
-	// $.ajax({
-    //     url: 'https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson',
-    //     beforeSend: function(xhr) {
-    //          xhr.setRequestHeader("Authorization", "Token 530f6a7248efa245bedc69e1652a7940670c8446")
-    //     }, success: function(data){
-    //         alert(data);
-    //         //process the JSON data etc
-    //     }
-	// })
-	// var geojsonLayer = new L.GeoJSON.AJAX("Kobo/march30_2.geojson")
-	// geojsonLayer.addTo(mymap);
-	// curl -X GET https://kf.kobotoolbox.org/api/v2/assets.json -H "Authorization: Token 530f6a7248efa245bedc69e1652a7940670c8446"
-	// curl -u kohaye:Gunjuice509 "https:/kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson"
-	// curl -X GET https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson -H "Authorization: {"token":"530f6a7248efa245bedc69e1652a7940670c8446"}"
 
-	var myHeaders = new Headers();
-	myHeaders.append("Authorization", "Basic a29oYXllOkd1bmp1aWNlNTA5");
+// 	var xhr = new XMLHttpRequest();
+// xhr.withCredentials = true;
 
-	var requestOptions = {
-	method: 'GET',
-	headers: myHeaders,
-	redirect: 'follow'
-	};
-	fetch("https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson", requestOptions)
-	.then(response => response.geojson())
-	.then(result => console.log(result))
-	.catch(error => console.log('error', error));
+// xhr.addEventListener("readystatechange", function() {
+//   if(this.readyState === 4) {
+//     console.log(this.responseText);
+//   }
+// });
 
-	var geojsonLayer = new L.GeoJSON.AJAX("Kobo/march30_2.geojson", {
+// xhr.open("GET", "https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson");
+// xhr.setRequestHeader("Authorization", "Basic a29oYXllOkd1bmp1aWNlNTA5");
+
+// xhr.send();
+
+	var geojsonLayer = new L.GeoJSON.AJAX("Kobo/geoJSON.geojson", {
 		onEachFeature: function (feature, layer) {
 			layer.bindPopup('<h1>'+feature.properties.Tree_Type+'</h1>');
   }});
