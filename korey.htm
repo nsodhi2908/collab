@@ -15,10 +15,9 @@
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script> <!-- Needed -->
 	<link rel="stylesheet" href="css.css">
 	<script type="text/javascript" src="koreystuff/js.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+	<!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
 	<!-- <script type="text/javascript" src="https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson"></script> -->
 	<!-- <script type="text/javascript" src="Leaflet\ajax.js"></script> -->
 	<!-- <script type="text/javascript" src="march30_4.json"></script> -->
@@ -119,7 +118,7 @@ xhr.setRequestHeader("Authorization", "Basic a29oYXllOkd1bmp1aWNlNTA5");
 
 xhr.send();
 
-	var geojsonLayer = new L.GeoJSON.AJAX("Kobo/geojson.geojson", {
+	var geojsonLayer = new L.GeoJSON.AJAX("Kobo/geoJSON.geojson", {
 		onEachFeature: function (feature, layer) {
 			layer.bindPopup('<h1>'+feature.properties.Tree_Type+'</h1>');
   }});
