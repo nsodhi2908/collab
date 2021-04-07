@@ -2,7 +2,7 @@ name: py
     
     on:
       schedule:
-        - cron: "* * * * *" #runs every minute
+        - cron: "0,5,10,15,20,25,30,35,40,45,50,55 * * * *" #runs every minute
     
     jobs:
       build:
