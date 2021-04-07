@@ -15,10 +15,6 @@ var rainviewer = L.control.rainviewer({
   opacity: 0.5
 });
 
-mymap = L.map('mapid').setView([-27.471, 153.026], 7);
 
-L.control.layers(baseMaps).addTo(mymap);
-
-baseMaps['Voyager'].addTo(mymap);
 
 rainviewer.addTo(mymap);
