@@ -2,7 +2,7 @@ name: Update geoJSON.geojson
 
 on: 
   schedule: 
-    - cron:  '* * * * *'
+    - cron:  '0/5 * * * *'
 
 jobs: 
   run:
