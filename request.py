@@ -8,7 +8,7 @@ headers = {
   'Authorization': 'Basic a29oYXllOkd1bmp1aWNlNTA5'
 }
 
-response = urllib.request("GET", url, headers=headers, data=payload)
+response = urllib.request.Request(url, headers=headers, data=payload)
 myfile = open(r"Kobo\geoJSON.geojson", "w")
 myfile.write(response.text)
 print("done")
