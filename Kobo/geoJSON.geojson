@@ -11,6 +11,8 @@
 {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.557349, 44.543306, 0.0]}, "properties": {"start": "2021-03-31T15:10:57.285-04:00", "end": "2021-03-31T15:11:02.399-04:00", "Tree_Type": "Tree"}},
 {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.547716, 44.545481, 0.0]}, "properties": {"start": "2021-04-06T13:14:50.885-04:00", "end": "2021-04-06T15:29:26.494-04:00", "Tree_Type": "Shrub"}},
 {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.562273, 44.548435, 0.0]}, "properties": {"start": "2021-04-06T15:29:26.518-04:00", "end": "2021-04-06T15:29:36.104-04:00", "Tree_Type": "Shrub"}},
-{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.569722, 44.549615, 0.0]}, "properties": {"start": "2021-04-06T15:29:36.126-04:00", "end": "2021-04-06T15:29:43.709-04:00", "Tree_Type": "Tree"}}
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.569722, 44.549615, 0.0]}, "properties": {"start": "2021-04-06T15:29:36.126-04:00", "end": "2021-04-06T15:29:43.709-04:00", "Tree_Type": "Tree"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.541188, 44.555482, 0.0]}, "properties": {"start": "2021-04-06T15:29:43.721-04:00", "end": "2021-04-06T16:59:26.765-04:00", "Tree_Type": "Tree"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.587275, 44.561605, 0.0]}, "properties": {"start": "2021-04-06T16:59:57.868-04:00", "end": "2021-04-06T17:00:04.602-04:00", "Tree_Type": "Shrub"}}
 ]
 }
