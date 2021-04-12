@@ -1,18 +1,18 @@
 name: Update geoJSON.geojson
 
-on: 
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'     
-        required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'  
+# on: 
+#   workflow_dispatch:
+#     inputs:
+#       logLevel:
+#         description: 'Log level'     
+#         required: true
+#         default: 'warning'
+#       tags:
+#         description: 'Test scenario tags'  
 
-# on:
-#   schedule: 
-#     - cron:  '0,5,10,15,20,25,30,35,40,45,50,55 * * * *'
+on:
+  schedule: 
+    - cron:  '0,30 * * * *'
 
 jobs: 
   run:
