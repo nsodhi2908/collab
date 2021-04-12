@@ -27,6 +27,7 @@
 {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.351498, 44.298493, 0.0]}, "properties": {"start": "2021-04-07T16:46:36.387-04:00", "end": "2021-04-07T16:46:46.020-04:00"}},
 {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.287671, 44.228396, 0.0]}, "properties": {"start": "2021-04-07T16:46:46.039-04:00", "end": "2021-04-07T16:46:55.260-04:00", "Tree_Type": "Tree"}},
 {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.428683, 44.258319, 0.0]}, "properties": {"start": "2021-04-07T16:47:02.643-04:00", "end": "2021-04-07T16:47:09.828-04:00", "Tree_Type": "Tree"}},
-{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.460125, 44.245712, 0.0]}, "properties": {"start": "2021-04-07T16:47:09.854-04:00", "end": "2021-04-07T16:47:19.150-04:00", "Tree_Type": "Tree"}}
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.460125, 44.245712, 0.0]}, "properties": {"start": "2021-04-07T16:47:09.854-04:00", "end": "2021-04-07T16:47:19.150-04:00", "Tree_Type": "Tree"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.555482, 44.472223, 0.0]}, "properties": {"start": "2021-04-12T11:50:22.805-04:00", "end": "2021-04-12T12:18:22.406-04:00", "Tree_Type": "Tree"}}
 ]
 }
