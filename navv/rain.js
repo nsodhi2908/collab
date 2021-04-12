@@ -7,7 +7,7 @@ L.Control.Rainviewer = L.Control.extend({
         positionSliderLabelText: "Hour:",
         opacitySliderLabelText: "Opacity:",
         animationInterval: 500,
-        opacity: 0.5
+        opacity: 0.3
     },
 
     onAdd: function (map) {
