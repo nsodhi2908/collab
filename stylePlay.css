@@ -1,0 +1,384 @@
+/* Formatting for responsive design was originally set up for a large window.
+We had realized that the window on a computer would be responsive, but a mobile
+wouldn't actually show the responsive design, so I we decided to format it for a mobile
+first, then change the design as the screen got larger. */
+
+/* Source: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design */
+
+/* Font */
+/* Beginning of Mobile Formatting
+Organizer: Korey Hayes
+Source:  https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design
+Owners: Shown in the main formatting and @Media Formatting area */
+
+
+/***************** 
+* Owner : Honglin (Jim) Wei
+* Date  : Nov 24 (v1)
+* From  : https://www.w3schools.com/html/html_intro.asp
+          https://developers.google.com/maps/documentation/javascript/adding-a-google-map#maps_add_map-css
+******************/
+
+body,h1,h2,h3,h4,h5,h6, header, footer {font-family: "Lato", sans-serif}
+
+a {
+  color: white;
+  text-decoration: none;
+  /* font-weight:bold; */
+}
+a:hover {
+  font-weight:bold;
+}
+
+.j {
+    list-style-type: square;
+    overflow: visible;
+    margin-left: 40px;
+    padding-bottom: 25px;
+}
+
+.imgj3 {
+  list-style-type: none;
+  width: 80% ;
+  margin-left:25px;
+  margin-right:15px;
+}
+
+.imgj4 {
+  list-style-type: none;
+  width: 80% ;
+  margin-left:25px;
+  margin-right:15px;
+}
+
+/* This id selector is used specificaly for google api map element*/
+#map {
+  height:400px;
+  width:100%;
+}
+
+p.ji {
+  font-style: italic;
+}
+
+p.wrap{
+  padding-right: 25%;
+}
+/* End Owner: Honglin (Jim) Wei */
+
+/***************** 
+* Owner : Jennifer Debono
+* Nov 30 2020
+* JenniferDebono.github.io/CSS_Pg1.css
+* Format footer
+**********************************/
+.footer {
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+/***************** 
+* https://codepen.io/Ramagician/pen/GWpKZj
+* https://www.w3schools.com/css/css_float_clear.asp
+* Format text style boxes for titles and images on Crew page
+**********************************/
+.container {
+  height: 250px;
+  background: white;
+  border: solid;
+  border-color: #4e6d26;
+  padding: 10pt;
+  margin-bottom: 10px;
+}
+
+.image-container {
+  float: left;
+  width:30%;
+}
+
+.imageJD {
+  overflow: hidden;
+  padding-right: 20pt;
+  width:100%;
+}
+
+.text {
+    height: 100%;
+    padding: 10pt;
+    float:right;
+    width: 60%;
+}
+
+/****************** 
+* https://css-tricks.com/using-css-for-image-borders/
+* formatting for images on remote Sensing and Spatial analysis
+**********************************/
+.imgJD {
+  width: auto;
+  height: auto;
+  padding: 20pt;
+  align-items: center;
+}
+
+.imgcolumn1 {
+  float: left;
+  align-items: center;
+}
+
+.imgcolumn3 {
+  float: right;
+}
+
+/****************** 
+* https://css-tricks.com/using-css-for-image-borders/
+* formatting for after columns *
+**********************************/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/****************** 
+* https://css-tricks.com/using-css-for-image-borders/
+* formatting for text header and descriptions 
+**********************************/
+.topJD {
+  text-align: left;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.topJDCrew {
+  text-align: left;
+  padding: 20px;
+  border: 4px solid #4e6d26;
+  margin-bottom: 20px;
+}
+/* End Owner: Jennifer Debono */
+
+/***************** 
+* Owner : Korey Hayes
+* Date  : Nov 24 (v1)
+* From  : https://programminghub.io/coursedetail/programming/learn/CSS/
+* the tag names li, li a and ul are from https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+******************/
+/* set classes and tags to have full window width for mobile/small window viewing */
+.columnk1,  .columnk2, .columnk3, .columnk4, article, .image,
+header, aside, nav, li, a, .box, .imgcolumn1, .imgcolumn3, .top{ 
+width: 100%; 
+}
+/* Navigation Bar */
+
+nav {
+background-color: #4e6d26;
+}
+
+ul {
+margin:0;
+padding:0;
+overflow: hidden;
+}
+
+.link{
+    list-style-type: none;          
+}
+
+li a {
+    float:left;
+}
+/* change the colour of the active link and make it all caps*/
+.active{background-color: #334719;  
+text-transform: uppercase;}           
+
+/* Style the navigation menu */
+.navDrop {
+overflow: hidden;
+background-color: #4e6d26;
+/* position: relative; */
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.navDrop #navLinks {
+display: none;
+}
+
+/* Style navigation menu links */
+.navDrop a {
+color: white;                       /* changes from default blue */
+padding: 10px;
+text-decoration: none;                /* removes the underline */
+display: block;
+}
+.navDrop a:hover {
+background-color: #9dcc60;          /* lighter background on hover */
+}
+
+/* End of Navigation Bar */
+
+/* we had decided as a group that the top of our page should have
+a background to make sure that the photo placement is seamless */
+.top{background-color: #4e6d26;
+  display: table;
+  clear: both;
+}
+
+article {
+text-align: left;
+float: left;
+margin-left: 10px; 
+}
+section:after {
+content: "";            /* ensures no content comes into the section */
+display: table;         /* allows me to set up tags and classes as columns */
+clear: both;            /* ensures no content comes out of the section */
+}
+aside {
+float: left;
+}
+/* This header was designed  to use my Mattawa River photo
+to coincide with the Fleming College Logo */
+header{
+font-size: 50px;
+float: right;
+text-align:right;
+background-color: #4e6d26;
+}
+.form{
+  background-color: #4e6d26;
+  padding: 10px;
+}
+/* End Owner: Korey Hayes */
+
+/* Owner: Kedie Perdue
+Nov 30, 2020
+https://www.w3schools.com/html/html_forms.asp
+https://www.w3schools.com/css/css_form.asp  
+Duckett, Jon. HTML and CSS: Design and Build Websites. Wiley &amp; Sons, 2011. chp14*/
+
+/* form css*/
+/*Used label and label. classes to avoid conflit with other css classes*/
+/* Position of the form on the page*/
+
+.label{
+  top: 80%;
+  left: 20%;
+  max-width: 350px;
+  width: 100%;
+  padding: 25px;
+  border-radius: 5px; 
+}
+
+/* Heading of the form*/
+.label h2{
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #332902;
+}
+/* size of the columns*/
+.label .input_field{
+  margin-bottom: 10px;
+}
+/* Portion where the text of the form goes*/
+.input_field input[type="text"],
+.label textarea{
+  border: 1px solid black;
+  width: 100%;
+  padding: 10px;
+}
+/* style 'course' portion of the text area*/
+.label textarea{
+  resize: none;
+  height: 80px;
+}
+
+/* style submit button*/
+
+.btn2 input[type="submit"]{
+  border: 0px;
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  color: Green;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  border-radius: 40px;
+  cursor: pointer;
+}
+/* Styling for the list*/
+.k {
+  list-style-type: disc;
+  overflow: visible;
+  padding-left: 20px;
+}
+
+
+/* End Owner Kedie Perdue*/
+
+/* End of Mobile Formatting */
+
+/* Beginning of Computer Monitor Formatting */
+
+@media only screen and (min-width: 1000px) {
+/***************** 
+* Owner : Honglin (Jim) Wei
+* Date  : Nov 24 (v1)
+* From  : https://stackoverflow.com/questions/25785142/css-responsive-make-floating-boxes-stack-up/25785613#25785613?newreg=c75bb90d357f4ef8882d826cf5a1cc1b
+******************/
+/* Floats left on computer monitor */
+.imgj3 {
+  float: left;
+  width: 35%;
+}
+
+.imgj4 {
+  float: left;
+  width: 25% ;
+}
+/* End Owner: Honglin (Jim) Wei */
+
+/***************** 
+* Owner : Jennifer Debono
+* Nov 30 2020
+* https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Handling_different_text_directions 
+* Format text style boxes for titles on Crew page
+**********************************/
+.box {
+    width: 150px;
+  }
+.imgcolumn1{width:35%;}
+.imgcolumn3{width:60%;}
+  /* End Owner: Jennifer Debono */
+
+  /***************** 
+* Owner : Korey Hayes
+* Date  : Nov 24 (v1)
+* From  : https://programminghub.io/coursedetail/programming/learn/CSS/
+* the tag names li, li a and ul are from https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+******************/
+.columnk1{ float: left;
+width: 59%;
+}
+.columnk2{ float: right;
+width: 40%
+}
+.columnk3{ float: right;
+width: 59%
+}
+.columnk4{ float: left;
+width: 40%;
+}
+article { width: 60%;}
+aside { width: 30%;}
+header{width: 67%;}
+li a {width:auto;}
+}
+
+/* End of Computer Monitor Formatting */
