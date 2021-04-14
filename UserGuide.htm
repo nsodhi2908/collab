@@ -1,68 +1,120 @@
 <!DOCTYPE html>
-<html>
-<head>
-	
-	<title>Quick Start - Leaflet</title>
+<html lang="en">
+    <head>
+        <title>User Guide</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="stylePlay.css">
+		
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <script src="koreystuff\js.js"></script>
+    </head>
 
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <body>
+    <div class = "top">
+        <!-- Heading
+        <header>Group 7 Consulting Page</header> -->
+        <!-- Logo -->
+        <aside>
+            <img class = "image" src="image/Logo.svg" alt="Fleming Logo">
+        </aside>
+        <header>
+            <img class = "image" src="image/MattawaRiverCrop.jpg" alt="Mattawa River">
+        </header>
+    </div>
+    <!-- 
+        - Owner : Korey Hayes
+        - Date  : Nov 24
+        - From  : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ -->
+    <!--Navbar-->
+	<nav class = "navDrop">
+        <a href="javascript:void(0);" onclick="clickDrop()">Menu</a>
+        <ul class = "link" id="navLinks">
+			<li><a href="index.htm">Main</a></li> 
+			<li><a class="active" href="nav.htm">Product Solution</a></li>
+			<li><a href="UserGuide.htm">User Guide</a></li>
+			<li><a href="ProcessSteps.htm">Process Steps</a></li>
+			<li><a href="https://ee.kobotoolbox.org/x/fOVUuTza" target="_blank">KoboToolbox Form</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Data Collection - How to Add Your Own Trees!</h2>
+        <div class = "columnk1">
+            <img class = "image" src="image/FormCapture.PNG" alt="FormCapture" id="Form" width="747px" height="945">
+        </div>
+        <div class = "columnk2">
+            <p>Know of a fruit tree in your area? Wnat to share that precious yield with everyone around you?</p>
+			</p>This form will allow you to set the location and choose the plant type (Tree/shrub).</p>
+			</p>One tree may be submitted at a time.</p>
+			</p>Are you currently at the tree you wish to add?</p>
+			</p>- Click the location icon to the right of the search =bar. you coordinates will automatically populate!</p>
+			</p>Are you somehwere else?</p>
+			</p>- Search for an address in the search bar</p>
+			</p>- Pan and zoom to locate your Tree</p>
+			</p>- Click the location on the map to set your point </p>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-
-
-	
-</head>
-<body>
-
-
-
-<div id="mapid" style="width: 600px; height: 400px;"></div>
-<script>
-
-	var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-
-	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-		maxZoom: 18,
-		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		id: 'mapbox/streets-v11',
-		tileSize: 512,
-		zoomOffset: -1
-	}).addTo(mymap);
-
-	L.marker([51.5, -0.09]).addTo(mymap)
-		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-	L.circle([51.508, -0.11], 500, {
-		color: 'red',
-		fillColor: '#f03',
-		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("I am a circle.");
-
-	L.polygon([
-		[51.509, -0.08],
-		[51.503, -0.06],
-		[51.51, -0.047]
-	]).addTo(mymap).bindPopup("I am a polygon.");
-
-
-	var popup = L.popup();
-
-	function onMapClick(e) {
-		popup
-			.setLatLng(e.latlng)
-			.setContent("You clicked the map at " + e.latlng.toString())
-			.openOn(mymap);
-	}
-
-	mymap.on('click', onMapClick);
-
-</script>
-
-
-
-</body>
+            </p>
+        </div>
+    </section>
+    <section>
+        <h2>Geoviz' Tech Focus 2</h2>    
+        <div class = "columnk3">
+            <img  class = "image" src="image/GVTF2.JPG" alt="Geoviz Tech Focus 2">
+        </div>
+        <div class = "columnk4">
+            <p>We are able to label anything you need to convey the message you wish to share to the world
+                on your map. We understand that maps are not just a visual piece of art but a story. We
+                can customize the size, shape, position, and behaviour of your labels to suit your needs.
+                Understanding visual hierarchy for text on maps is a very important part of cartography
+                and you will need to look no further than our group of experts. We have done this more times
+                than we can all count and have done it successfully.
+            </p>
+        </div>
+    </section>
+    <section>
+        <h2>Geoviz' Tech Focus 3</h2>
+        <div class = "columnk1">
+            <img  class = "image" src="image/GVTF3.JPG" alt="Geoviz Tech Focus 3">
+        </div>
+        <div class = "columnk2">
+            <p>We can put the ART back in cARTography by incorporating colour schemes to ensure your map
+                stands out. We understand how colours can clash and compliment we manipulate where people's
+                eyes want to go to make sure your message is clear and never missed. Applying visual hierarchy
+                with respect to colour saturation, hue and transparency to make the stronger features hit home
+                and the base features elaborate on the main story being told is one of our many strengths.
+            </p>
+        </div>
+    </section>
+    <section>
+        <h2>Geoviz Final Project</h2>
+        <div class = "columnk3">
+            <img  class = "image" src="image/GVFinal.JPG" alt="Geoviz Final Map">
+        </div>
+        <div class = "columnk4">
+            <p>We are able to use various tools to run habitat suitability analyses to showcase areas that
+                are more likely to hold specific animals. Whatever your needs, we are able to show your data 
+                in a visually stunning way that can then be used as a tool itself. From acquiring to inspiring,
+                we know how to make your project shine. We can even add customized images for personal touches to
+                your project to really make it your own. If you want it on your map, don't hesitate to ask.
+            </p>
+        </div>
+    </section>
+    <!-- End Owner: Korey Hayes -->
+        <!--
+        - Owner : Jennifer Debono
+        - Date  : Nov 24 (v1)
+        - From  : https://www.w3schools.com/html/html_intro.asp -->
+        <footer>
+            <div class="footer">
+                <a href= "https://flemingcollege.ca/">Fleming College</a>
+                <p>
+                Resource:
+                    <a href="https://www.w3schools.com/html/default.asp">W3Schools |</a> 
+                    <a href="https://programminghub.io/"> Programming Hub |</a> 
+                    <a href="https://developer.mozilla.org/en-US/"> Mozilla Developers</a> 
+                </p>
+                <p>Est 2020</p>
+            </div>
+        </footer>
+        <!--*** End Owner: Jennifer Debono *** -->
+    </body>
 </html>

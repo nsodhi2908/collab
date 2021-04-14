@@ -448,3 +448,7 @@ li a {width:auto;}
 }
 
 /* End of Computer Monitor Formatting */
+#Form {
+  width: 50%;
+  height: 50%;
+}
