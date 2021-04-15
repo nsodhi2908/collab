@@ -181,7 +181,8 @@
 	function onMapClick(e) {
 		popup
 			.setLatLng(e.latlng)
-			.setContent("Would you like to add a tree? Link to Form submission")   //This here is just the onclick popup for anywhere on the map
+			.setContent("<h3>Would you like to add a tree?<h3>" + 
+				"</br><a href=\"https://ee.kobotoolbox.org/single/fOVUuTza?returnUrl=https://nsodhi2908.github.io/collab/nav.htm\">Submission Form</a>")   //This here is just the onclick popup for anywhere on the map
 			.openOn(mymap);
 	}
 
