@@ -2,7 +2,7 @@
 <html>
 <head>
 	
-	<title>Korey's GeoJSON Fiddle Page</title>
+	<title>Riley's GeoJSON Fiddle Page</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,11 @@
 	<script type="text/python" src="request.py"></script>
 	<link rel="stylesheet" type="text/css" href="navv/rainviewer.css">
 	<script type="text/javascript" src="navv/rain.js"></script>
-	
+
+    <!--RILEY TESTING APRIL 15-->
+    <script src="https://cdn-webgl.wrld3d.com/wrldjs/dist/latest/wrld.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/leaflet.css" rel="stylesheet" />
+	<!--END -->
 </head>
 <body>
 		<div id="ac-wrapper">
@@ -79,20 +83,34 @@
         </nav>
 	</div>
     <!-- End Owner: Korey Hayes -->
+
+    <!--RILEY TESTING APRIL 15-->
 <div id="mapid"></div>
-<script type="text/javascript">
-	function PopUp(hideOrshow) {
+<script>
+    var map = L.Wrld.map("map", "your_api_key_here", {
+      center: [37.7858, -122.401],
+      zoom: 17
+    
+    });
+    function PopUp(hideOrshow) {
 		if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
 		else document.getElementById('ac-wrapper').removeAttribute('style');
-	}
-	
+
+    var weathers = [L.Wrld.themes.weather.Clear, L.Wrld.themes.weather.Overcast, L.Wrld.themes.weather.Rainy, L.Wrld.themes.weather.Snowy];
+    var weatherIndex = 2;
+    setInterval(function() {
+      map.themes.setWeather(weathers[weatherIndex]);
+      weatherIndex = (weatherIndex + 1) % weathers.length;
+    }, 5000);
+  
+
 	// window.onload = function () {
 	// 	setTimeout(function () {
 	// 		PopUp('show');
 	// 	}, 5000);
 	// }
 	</script>
-
+    //  END
 <script>
 
 	var mymap = L.map('mapid').setView([44.3, -78.5], 9);
