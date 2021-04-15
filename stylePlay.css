@@ -88,6 +88,9 @@ a {
   z-index: 10000;
   text-transform: uppercase;
 }
+.active:hover{
+  font-weight:bold;
+}
 
 .nav-link{
   font-size: 1.2rem;
@@ -119,6 +122,9 @@ a {
   font-size: 2rem;
   font-weight: 500;
   color: #fff;
+}
+.nav-logo:hover{
+  font-weight:bold;
 }
 .active-logo:hover{
   /* background-color: #9dcc60; */
