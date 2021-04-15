@@ -154,7 +154,7 @@
 
 // xhr.send();
 
-	var geojsonLayer = new L.GeoJSON.AJAX("Kobo/geoJSON.geojson", {
+var geojsonLayer = new L.GeoJSON.AJAX("Kobo/geoJSON.geojson", {
 		onEachFeature: function (feature, layer) {
 			layer.bindPopup('<h1>'+feature.properties.Tree_Type+'</h1>');
   }});

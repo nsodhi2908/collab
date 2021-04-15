@@ -309,3 +309,9 @@ width: 100%;
 
 /* End of Computer Monitor Formatting */
 }
+
+.subheader {
+  font-size: large;
+  font-weight: bold;
+  color: rgb(7, 80, 7);
+}
