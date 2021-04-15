@@ -173,12 +173,16 @@ html, body {
 }
 
 .footer {
+  width:67%;
+  float:right;
   background-color: #777;
   padding: 10px;
   text-align: center;
   color: white;
   margin-top: 10px;
+  height:10%;
 }
+.flemLogo{height:100%;}
 
 /* a {
 color: white;
@@ -196,14 +200,17 @@ font-weight:bold;
 * the tag names li, li a and ul are from https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 ******************/
 /* set classes and tags to have full window width for mobile/small window viewing */
-
+.top{width:100%;
+background-color: #fff;
+}
 
 /* we had decided as a group that the top of our page should have
 a background to make sure that the photo placement is seamless */
-.top{background-color: #4e6d26;
+.bottom{background-color: #777;
 display: table;
 clear: both;
 border-bottom:1px solid #000;
+width:100%;
 }
 .sect{margin-top:20px;}
 .sect:after {
@@ -308,8 +315,8 @@ background-color: #4e6d26;
 * From  : https://programminghub.io/coursedetail/programming/learn/CSS/
 * the tag names li, li a and ul are from https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 ******************/
-.columnk1,  .columnk2, .columnk3, .columnk4, article, .image,
-header, aside, nav, li, a, .box, .imgcolumn1, .imgcolumn3, .top{ 
+.columnk1,  .columnk2, .columnk3, .columnk4, article, .image, .bottom, 
+header, aside, nav, li, a, .box, .imgcolumn1, .imgcolumn3, .top, .footer{ 
 width: 100%; 
 }
 
