@@ -96,48 +96,6 @@ a:hover {
   font-weight:bold;
 }
 
-.j {
-    list-style-type: square;
-    overflow: visible;
-    margin-left: 40px;
-    padding-bottom: 25px;
-}
-
-.imgj3 {
-  list-style-type: none;
-  width: 80% ;
-  margin-left:25px;
-  margin-right:15px;
-}
-
-.imgj4 {
-  list-style-type: none;
-  width: 80% ;
-  margin-left:25px;
-  margin-right:15px;
-}
-
-/* This id selector is used specificaly for google api map element*/
-#map {
-  height:400px;
-  width:100%;
-}
-
-p.ji {
-  font-style: italic;
-}
-
-p.wrap{
-  padding-right: 25%;
-}
-/* End Owner: Honglin (Jim) Wei */
-
-/***************** 
-* Owner : Jennifer Debono
-* Nov 30 2020
-* JenniferDebono.github.io/CSS_Pg1.css
-* Format footer
-**********************************/
 .footer {
     background-color: #777;
     padding: 10px;
@@ -145,86 +103,6 @@ p.wrap{
     color: white;
     margin-top: 10px;
 }
-
-/***************** 
-* https://codepen.io/Ramagician/pen/GWpKZj
-* https://www.w3schools.com/css/css_float_clear.asp
-* Format text style boxes for titles and images on Crew page
-**********************************/
-.container {
-  height: 250px;
-  background: white;
-  border: solid;
-  border-color: #4e6d26;
-  padding: 10pt;
-  margin-bottom: 10px;
-}
-
-.image-container {
-  float: left;
-  width:30%;
-}
-
-.imageJD {
-  overflow: hidden;
-  padding-right: 20pt;
-  width:100%;
-}
-
-.text {
-    height: 100%;
-    padding: 10pt;
-    float:right;
-    width: 60%;
-}
-
-/****************** 
-* https://css-tricks.com/using-css-for-image-borders/
-* formatting for images on remote Sensing and Spatial analysis
-**********************************/
-.imgJD {
-  width: auto;
-  height: auto;
-  padding: 20pt;
-  align-items: center;
-}
-
-.imgcolumn1 {
-  float: left;
-  align-items: center;
-}
-
-.imgcolumn3 {
-  float: right;
-}
-
-/****************** 
-* https://css-tricks.com/using-css-for-image-borders/
-* formatting for after columns *
-**********************************/
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/****************** 
-* https://css-tricks.com/using-css-for-image-borders/
-* formatting for text header and descriptions 
-**********************************/
-.topJD {
-  text-align: left;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.topJDCrew {
-  text-align: left;
-  padding: 20px;
-  border: 4px solid #4e6d26;
-  margin-bottom: 20px;
-}
-/* End Owner: Jennifer Debono */
 
 /***************** 
 * Owner : Korey Hayes
@@ -297,11 +175,12 @@ text-align: left;
 float: left;
 margin-left: 10px; 
 }
-section:after {
-content: "";            /* ensures no content comes into the section */
-display: table;         /* allows me to set up tags and classes as columns */
-clear: both;            /* ensures no content comes out of the section */
-}
+.sect:after {
+content: "";            
+display: table;         
+clear: both;            
+overflow:hidden
+} 
 aside {
 float: left;
 }
@@ -319,74 +198,125 @@ background-color: #4e6d26;
 }
 /* End Owner: Korey Hayes */
 
-/* Owner: Kedie Perdue
-Nov 30, 2020
-https://www.w3schools.com/html/html_forms.asp
-https://www.w3schools.com/css/css_form.asp  
-Duckett, Jon. HTML and CSS: Design and Build Websites. Wiley &amp; Sons, 2011. chp14*/
 
-/* form css*/
-/*Used label and label. classes to avoid conflit with other css classes*/
-/* Position of the form on the page*/
+/* General */
+/* html {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+} */
 
-.label{
-  top: 80%;
-  left: 20%;
-  max-width: 350px;
-  width: 100%;
-  padding: 25px;
-  border-radius: 5px; 
+/* body {
+  margin: 20px 0;
+  overflow: auto;
+ 
+  color: #fff;
+ } */
+
+/*a {
+  color: #fff;
+  text-decoration: none;
+} */
+
+/* .p-menu1{
+   height: 100%;
+} */
+
+
+
+
+/* Hamburger */
+.hamburger1 {
+  height: 45px;
+  margin: 10px;
+  display: -ms-grid;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  z-index: 120;
 }
 
-/* Heading of the form*/
-.label h2{
+.hamburger1 div {
+  background-color: rgb(61, 61, 61);
+  position: relative;
+  width: 40px;
+  height: 5px;
+  margin-top: 7px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#toggle1 {
+  display: none;
+}
+
+#toggle1:checked + .hamburger1 .top {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: 22.5px;
+}
+
+#toggle1:checked + .hamburger1 .meat {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-top: -5px;
+}
+
+#toggle1:checked + .hamburger1 .bottom {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+#toggle1:checked ~ .menu1 {
+  height: 340px;
+}
+
+
+/* Menu */
+.menu1 {
+  width: 100%;
+  background-color: #4e6d26;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  grid-template-rows: 1fr repeat(4, 0.5fr);
+  grid-row-gap: 25px;
+  padding: 0;
+  list-style: none;
+  /* list-style-type: none; */
+  clear: both;
+  width: auto;
   text-align: center;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #332902;
+  height: 0px;
+  overflow: hidden;
+  transition: height .4s ease;
+  z-index: 120;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-/* size of the columns*/
-.label .input_field{
-  margin-bottom: 10px;
+
+.menu1 a:first-child {
+  margin-top: 40px;
 }
-/* Portion where the text of the form goes*/
-.input_field input[type="text"],
-.label textarea{
-  border: 1px solid black;
+
+.menu1 a:last-child {
+  margin-bottom: 40px;
+}
+
+.link1 {
   width: 100%;
-  padding: 10px;
-}
-/* style 'course' portion of the text area*/
-.label textarea{
-  resize: none;
-  height: 80px;
+  margin: 0;
+  padding: 10px 0;
+  font: 700 20px 'Oswald', sans-serif;
 }
 
-/* style submit button*/
-
-.btn2 input[type="submit"]{
-  border: 0px;
-  margin-top: 15px;
-  padding: 10px;
-  text-align: center;
-  width: 100%;
-  color: Green;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-weight: bold;
-  border-radius: 40px;
-  cursor: pointer;
-}
-/* Styling for the list*/
-.k {
-  list-style-type: disc;
-  overflow: visible;
-  padding-left: 20px;
+.link1:hover {
+  background-color: #fff;
+  color: rgb(61, 61, 61);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-
-/* End Owner Kedie Perdue*/
 
 /* End of Mobile Formatting */
 

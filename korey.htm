@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.min.js"></script>
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script> <!-- Needed -->
-	<link rel="stylesheet" href="css.css">
+	<link rel="stylesheet" href="stylePlay.css">
 	<script type="text/javascript" src="koreystuff/js.js"></script>
 	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -51,21 +51,24 @@
         - Date  : Nov 24
         - From  : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ -->
     <!--Navbar-->
-    <nav class = "navDrop">
-        <a href="javascript:void(0);" onclick="clickDrop()">Menu</a>
-        <ul class = "link" id="navLinks">
-            <li><a class="active" href="index.htm">Main</a></li> 
-            <li><a href="database.htm">Databases</a></li>
-            <li><a href="geodesy.htm">Geodesy</a></li>
-            <li><a href="geoviz.htm">Geoviz'</a></li>
-            <li><a href="psp.htm">Programming</a></li>
-            <li><a href="remote.htm">Remote Sensing</a></li>
-            <li><a href="spatial.htm">Spatial Analysis</a></li>
-            <li><a href="survey.htm">Survey</a></li>
-            <li><a href="contact.htm">Crew</a></li>
-            <li><a href="intern.htm">Add A Tree!</a></li>
-        </ul>
-    </nav>
+	<section class="p-menu1">
+		<nav id="navbar" class="navigation" role="navigation">
+		  <input id="toggle1" type="checkbox" />
+		  <label class="hamburger1" for="toggle1">
+			<div class="top"></div>
+			<div class="meat"></div>
+			<div class="bottom"></div>
+		  </label>
+		
+		  <nav class="menu1">
+			<a class="link1" href="">Our Models</a>
+			<a class="link1" href="">Specialties</a>
+			<a class="link1" href="">About</a>
+			<a class="link1" href="">Blog</a>
+			<a class="link1" href="">Contact</a>
+		  </nav>
+	  </nav>
+	  </section>
     <!-- End Owner: Korey Hayes -->
 <div id="mapid"></div>
 <script type="text/javascript">
