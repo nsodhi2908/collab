@@ -281,3 +281,8 @@ width: 100%;
 
 /* End of Computer Monitor Formatting */
 }
+
+.subheader {
+  font-size: 50px;
+  color: darkgreen;
+}
