@@ -14,7 +14,6 @@
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.min.js"></script>
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script> <!-- Needed -->
 	<link rel="stylesheet" href="stylePlay.css">
-	<script type="text/javascript" src="koreystuff/js.js"></script>
 	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
@@ -52,18 +51,33 @@
         - Date  : Nov 24
         - From  : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ -->
     <!--Navbar-->
-    <nav class = "navDrop">
-        <a href="javascript:void(0);" onclick="clickDrop()">Menu</a>
-        <ul class = "link" id="navLinks">
-			<li><a href="index.htm">Main</a></li> 
-			<li><a class="active" href="nav.htm">Product Solution</a></li>
-			<li><a href="UserGuide.htm">User Guide</a></li>
-			<li><a href="ProcessSteps.htm">Process Steps</a></li>
-			<li><a href="https://ee.kobotoolbox.org/x/fOVUuTza" target="_blank">KoboToolbox Form</a></li>
-			<li><a href="https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/" target="_blank">KoboToolbox Submission Data</a></li>
-
-        </ul>
-    </nav>
+	<div class="header">
+        <nav class="navbar">
+            <a href="index.htm" class="nav-logo">AlphaProductions</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a class="nav-link" href="nav.htm">Product Solution</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="UserGuide.htm">User Guide</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ProcessSteps.htm">Process Steps</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="https://ee.kobotoolbox.org/x/fOVUuTza" target="_blank">KoboToolbox Form</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href=https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/" target="_blank">KoboToolbox Submission Data</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+	</div>
     <!-- End Owner: Korey Hayes -->
 <div id="mapid"></div>
 <script type="text/javascript">
@@ -186,6 +200,7 @@
 	
 </script>
 </body>
+<script src="koreystuff/js.js"></script>
 </html>
 <!--It looks like we didn't need either of these
 Default is sufficient apparently-->

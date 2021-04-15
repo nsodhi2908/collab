@@ -4,9 +4,7 @@
         <title>User Guide</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="stylePlay.css">
-		
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-        <script src="koreystuff\js.js"></script>
     </head>
 
     <body>
@@ -26,18 +24,37 @@
         - Date  : Nov 24
         - From  : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ -->
     <!--Navbar-->
-	<nav class = "navDrop">
-        <a href="javascript:void(0);" onclick="clickDrop()">Menu</a>
-        <ul class = "link" id="navLinks">
-			<li><a href="index.htm">Main</a></li> 
-			<li><a class="active" href="nav.htm">Product Solution</a></li>
-			<li><a href="UserGuide.htm">User Guide</a></li>
-			<li><a href="ProcessSteps.htm">Process Steps</a></li>
-			<li><a href="KoboForm.htm" target="_blank">KoboToolbox Form</a></li>
-            <li><a href="https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/" target="_blank">KoboToolbox Submission Data</a></li>
-        </ul>
-    </nav>
-    <section>
+
+=======
+	<div class="header">
+        <nav class="navbar">
+            <a href="index.htm" class="nav-logo">AlphaProductions</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a class="nav-link" href="nav.htm">Product Solution</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="UserGuide.htm">User Guide</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ProcessSteps.htm">Process Steps</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="https://ee.kobotoolbox.org/x/fOVUuTza" target="_blank">KoboToolbox Form</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href=https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/" target="_blank">KoboToolbox Submission Data</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+	</div>
+    <section class="sect">
+>>>>>>> 38b66aafe37406c01fa66aca6c3dbf83060d9524
         <h2>Data Collection - How to Add Your Own Trees!</h2>
         <div class = "columnk1">
             <img class = "image" src="image/FormCapture.PNG" alt="FormCapture" width="800px" height="613px">
@@ -55,7 +72,7 @@
 
         </div>
     </section>
-    <section>
+    <section class="sect">
         <h2>Web Application - Viewing the Data!</h2>    
         <div class = "columnk3">
             <img  class = "image" src="image/DisclaimCapture.PNG" alt="Disclaimer">
@@ -67,7 +84,7 @@
             
         </div>
     </section>
-    <section>
+    <section class="sect">
         <h2>Functionaility - Selecting Data to view Plant type</h2>
         <div class = "columnk1">
             <img  class = "image" src="image/PopupCapture.PNG" alt="PopupCapture">
@@ -79,7 +96,7 @@
 			<p>If you don't see your points, our system updates every 30 minutes, so be patient!</p>
         </div>
     </section>
-    <section>
+    <section class="sect">
         <h2>Rainviewer - Weather Radar for Harvest!</h2>
         <div class = "columnk3">
             <img  class = "image" src="image/RainCapture.PNG" alt="PopupCapture">
@@ -111,4 +128,5 @@
         </footer>
         <!--*** End Owner: Jennifer Debono *** -->
     </body>
+    <script src="koreystuff/js.js"></script>
 </html>

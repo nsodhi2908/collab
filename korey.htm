@@ -2,7 +2,7 @@
 <html>
 <head>
 	
-	<title>Korey's GeoJSON Fiddle Page</title>
+	
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +13,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.min.js"></script>
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script> <!-- Needed -->
-	<link rel="stylesheet" href="css.css">
-	<script type="text/javascript" src="koreystuff/js.js"></script>
+	<link rel="stylesheet" href="stylePlay.css">
 	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
@@ -23,7 +22,7 @@
 	<!-- <script type="text/javascript" src="march30_4.json"></script> -->
 	<!-- <script type="text/javascript" src="Kobo\march30_2.json"></script> -->
 	<script type="text/python" src="request.py"></script>
-	
+	<title>Korey's GeoJSON Fiddle Page</title>
 </head>
 <body>
 
@@ -51,21 +50,33 @@
         - Date  : Nov 24
         - From  : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ -->
     <!--Navbar-->
-    <nav class = "navDrop">
-        <a href="javascript:void(0);" onclick="clickDrop()">Menu</a>
-        <ul class = "link" id="navLinks">
-            <li><a class="active" href="index.htm">Main</a></li> 
-            <li><a href="database.htm">Databases</a></li>
-            <li><a href="geodesy.htm">Geodesy</a></li>
-            <li><a href="geoviz.htm">Geoviz'</a></li>
-            <li><a href="psp.htm">Programming</a></li>
-            <li><a href="remote.htm">Remote Sensing</a></li>
-            <li><a href="spatial.htm">Spatial Analysis</a></li>
-            <li><a href="survey.htm">Survey</a></li>
-            <li><a href="contact.htm">Crew</a></li>
-            <li><a href="intern.htm">Add A Tree!</a></li>
-        </ul>
-    </nav>
+	<div class="header">
+        <nav class="navbar">
+            <a href="index.htm" class="nav-logo">AlphaProductions</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a class="nav-link" href="nav.htm">Product Solution</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="UserGuide.htm">User Guide</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ProcessSteps.htm">Process Steps</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="https://ee.kobotoolbox.org/x/fOVUuTza" target="_blank">KoboToolbox Form</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href=https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/" target="_blank">KoboToolbox Submission Data</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+	</div>
     <!-- End Owner: Korey Hayes -->
 <div id="mapid"></div>
 <script type="text/javascript">
@@ -180,6 +191,7 @@
 
 
 </body>
+<script src="koreystuff/js.js"></script>
 </html>
 <!--It looks like we didn't need either of these
 Default is sufficient apparently-->
