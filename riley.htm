@@ -199,6 +199,16 @@
 		});
 		rainviewer.addTo(mymap);
 	
+    function onLocationFound(e) {
+        var radius = e.accuracy;
+
+        L.marker(e.latlng).addTo(map)
+            .bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+        L.circle(e.latlng, radius).addTo(map);
+    }
+
+    map.on('locationfound', onLocationFound);
 </script>
 </body>
 <script src="koreystuff/js.js"></script>
