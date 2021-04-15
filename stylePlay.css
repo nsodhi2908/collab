@@ -202,6 +202,8 @@ font-weight:bold;
 /* set classes and tags to have full window width for mobile/small window viewing */
 .top{width:100%;
 background-color: #fff;
+max-height: 300px;
+overflow: hidden;
 }
 
 /* we had decided as a group that the top of our page should have
