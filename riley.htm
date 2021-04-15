@@ -156,9 +156,9 @@
 
 	var geojsonLayer = new L.GeoJSON.AJAX("Kobo/geoJSON.geojson", {
 		onEachFeature: function (feature, layer) {
-			layer.bindPopup('<h1>'+feature.properties.Tree_Type+'</h1>');
+			addTo(mymap).bindPopup('<h1>'+feature.properties.Tree_Type+'</h1>');
   }});
-	geojsonLayer.addTo(mymap);
+	addTo(mymap);
 //It just shows that there was a photo saved and the name of the file. If we can find the location of the saved data this would be way better.
 //the geoJSON stores only text
 // geographic java script object "notation"
