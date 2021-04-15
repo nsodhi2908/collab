@@ -29,11 +29,11 @@ li {
 a {
     text-decoration: none;
     z-index: 10000;
-
 }
 
 .header{
-  border-bottom: 1px solid #E2E8F0;
+  border-top:1px solid black;
+  border-bottom: 1px solid #000;
   z-index: 10000;
 
 }
@@ -42,8 +42,10 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  /* padding: 1rem 1.5rem; */
   z-index: 10000;
+  background-color: #4e6d26;
+
 
 }
 .hamburger {
@@ -59,8 +61,8 @@ a {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: #101010;
   z-index: 10000;
+  background-color: black;
 
 }
 .nav-menu {
@@ -68,34 +70,59 @@ a {
   justify-content: space-between;
   align-items: center;
   z-index: 10000;
+  /* background-color: #4e6d26; */
 
 }
 
 .nav-item {
-  margin-left: 5rem;
+  margin-left: 1rem;
   z-index: 10000;
+  float:right;
 
+}
+
+.active{
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #fff;
+  z-index: 10000;
+  text-transform: uppercase;
 }
 
 .nav-link{
   font-size: 1.2rem;
   font-weight: 400;
-  color: #475569;
+  color: #fff;
   z-index: 10000;
-
+  display:block;
+  text-align: center;
+  float:right;
+  /* padding:10px; */
 }
 
 
 .nav-link:hover{
-  color: #482ff7;
+  color: #fff;
   z-index: 10000;
+  /* background-color: #9dcc60; */
+  font-weight: bold;
 
 }
-
-.nav-logo {
-  font-size: 1.6rem;
+.active-logo{
+  font-size: 2rem;
   font-weight: 500;
-  color: #482ff7;
+  color: #fff;
+  background: #4e6d26;
+  text-transform: uppercase;
+}
+.nav-logo {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff;
+}
+.active-logo:hover{
+  /* background-color: #9dcc60; */
+  font-weight: bold;
 }
 
 
@@ -170,6 +197,7 @@ a background to make sure that the photo placement is seamless */
 .top{background-color: #4e6d26;
 display: table;
 clear: both;
+border-bottom:1px solid #000;
 }
 .sect{margin-top:20px;}
 .sect:after {
@@ -217,9 +245,9 @@ background-color: #4e6d26;
   .nav-menu {
       position: fixed;
       left: -100%;
-      top: 5rem;
+      top: 1rem;
       flex-direction: column;
-      background-color: #fff;
+      background-color: #4e6d26;
       width: 100%;
       border-radius: 10px;
       text-align: center;
