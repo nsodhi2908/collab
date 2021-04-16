@@ -182,7 +182,7 @@ html, body {
   margin-top: 10px;
   /* height:10%; */
 }
-.flemLogo{height:100%;}
+/* .flemLogo{height:100%;} */
 
 /* a {
 color: white;
@@ -202,7 +202,7 @@ font-weight:bold;
 /* set classes and tags to have full window width for mobile/small window viewing */
 .top{width:100%;
 background-color: #4e6d26;
-max-height: 300px;
+max-height: 200px;
 overflow: hidden;
 }
 
