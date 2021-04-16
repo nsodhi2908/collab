@@ -173,14 +173,14 @@ html, body {
 }
 
 .footer {
-  width:67%;
+  width: 67%;
   float:right;
   background-color: #777;
   padding: 10px;
   text-align: center;
   color: white;
   margin-top: 10px;
-  height:10%;
+  /* height:10%; */
 }
 .flemLogo{height:100%;}
 
@@ -201,7 +201,7 @@ font-weight:bold;
 ******************/
 /* set classes and tags to have full window width for mobile/small window viewing */
 .top{width:100%;
-background-color: #fff;
+background-color: #4e6d26;
 max-height: 300px;
 overflow: hidden;
 }
@@ -227,6 +227,7 @@ float: left;
 /* This header was designed  to use my Mattawa River photo
 to coincide with the Fleming College Logo */
 header{
+  width:67%;
 font-size: 50px;
 float: right;
 text-align:right;
