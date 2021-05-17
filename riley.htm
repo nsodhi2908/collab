@@ -156,7 +156,9 @@
 
 	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
 		onEachFeature: function (feature, layer) {
-			layer.bindPopup('<h1>'+feature.properties.Species+'</h1>');
+			layer.bindPopup('<center>' + feature.properties.Species + 
+            '<br><center> Comments: ' + feature.properties.Comments);
+				
   }});
 	geojsonLayer.addTo(mymap);
 //It just shows that there was a photo saved and the name of the file. If we can find the location of the saved data this would be way better.
