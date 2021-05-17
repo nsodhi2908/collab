@@ -2,7 +2,7 @@
 <html>
 <head>
 	
-	<title>Korey's GeoJSON Fiddle Page</title>
+	<title>Solution</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,8 +82,8 @@
 <div id="mapid"></div>
 <script type="text/javascript">
 	function PopUp(hideOrshow) {
-		if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
-		else document.getElementById('ac-wrapper').removeAttribute('style');
+		if (hideOrshow == 'show') document.getElementById('ac-wrapper');
+		else document.getElementById('ac-wrapper').style.display = "none";
 	}
 	
 	// window.onload = function () {
@@ -94,35 +94,17 @@
 	</script>
 
 <script>
+
 	var mymap = L.map('mapid').setView([44.3, -78.5], 9);
 
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1
-    }).addTo(mymap);
-
-	function onLocationFound(e) {
-		var radius = e.accuracy / 2;
-
-		L.marker(e.latlng).addTo(mymap)
-			.bindPopup("You are within " + radius + " meters from this point").openPopup();
-
-		L.circle(e.latlng, radius).addTo(mymap);
-	}
-
-	function onLocationError(e) {
-		alert(e.message);
-	}
-
-	mymap.on('locationfound', onLocationFound);
-	mymap.on('locationerror', onLocationError);
-
-	mymap.locate({setView: true, maxZoom: 16});
-
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
 
 	// // USING JQUERY (AJAX)
 	// var settings = {
@@ -172,9 +154,9 @@
 
 // xhr.send();
 
-	var geojsonLayer = new L.GeoJSON.AJAX("Kobo/geoJSON.geojson", {
+	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
 		onEachFeature: function (feature, layer) {
-			layer.bindPopup('<h1>'+feature.properties.Tree_Type+'</h1>');
+			layer.bindPopup('<h1>'+feature.properties.Species+'</h1>');
   }});
 	geojsonLayer.addTo(mymap);
 //It just shows that there was a photo saved and the name of the file. If we can find the location of the saved data this would be way better.
@@ -199,7 +181,8 @@
 	function onMapClick(e) {
 		popup
 			.setLatLng(e.latlng)
-			.setContent("Would you like to add a tree? Link to Form submission")   //This here is just the onclick popup for anywhere on the map
+			.setContent("<h3>Would you like to add a tree?<h3>" + 
+				"</br><a href=\"https://ee.kobotoolbox.org/single/fOVUuTza?returnUrl=https://nsodhi2908.github.io/collab/nav.htm\">Submission Form</a>")   //This here is just the onclick popup for anywhere on the map
 			.openOn(mymap);
 	}
 
@@ -217,7 +200,6 @@
 		});
 		rainviewer.addTo(mymap);
 	
-   
 </script>
 </body>
 <script src="koreystuff/js.js"></script>
