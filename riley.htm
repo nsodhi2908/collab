@@ -230,7 +230,7 @@
 		rainviewer.addTo(mymap);
 
 	var searchControl = new L.Control.Search({
-		layer: featuresLayer,
+		layer: geojsonLayer,
 		propertyName: 'Species',
 		marker: false,
 		moveToLocation: function(latlng, title, map) {
