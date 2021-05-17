@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Solution</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" /> -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+	<script type="text/javascript" src="Leaflet\leaflet.ajax.min.js"></script>
+	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script> <!-- Needed -->
+	<link rel="stylesheet" href="stylePlay.css">
+	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+	<!-- <script type="text/javascript" src="https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson"></script> -->
+	<!-- <script type="text/javascript" src="Leaflet\ajax.js"></script> -->
+	<!-- <script type="text/javascript" src="march30_4.json"></script> -->
+	<!-- <script type="text/javascript" src="Kobo\march30_2.json"></script> -->
+	<script type="text/python" src="request.py"></script>
+	<link rel="stylesheet" type="text/css" href="navv/rainviewer.css">
+	<script type="text/javascript" src="navv/rain.js"></script>
+	
+</head>
+<body>
+		<div id="ac-wrapper">
+		<div id="popup">
+			<center>
+				<h2>Read Disclaimer and Accept</h2>
+				<h4>to continue on to Fruit Tree</h4>
+				<p>The data on this map is populated by the public, who may or may not be experts. 
+					The creators and/or hosts of this map, and the data, shall not be held responsible for 
+					any incorrect data that may be displayed by the map. It is ultimately your responsibility
+					as the user of this map to determine whether a fruit should be harvested and/or ingested. \
+					The creators and/or hosts of this map, and the data, shall not be held responsible for
+					users of this map that trespass on private property. This map is intended to be used
+					for public access ONLY. Any trees that may seem to be on private property should not be harvested
+					without direct permission from the landowner or you could face consequences that the creators/hosts
+					of this map and data shall not be liable for.
+				</p>
+				<input type="submit" name="submit" value="Accept" onClick="PopUp('hide')" />
+			</center>
+		</div>
+	</div>
+    <!-- 
+        - Owner : Korey Hayes
+        - Date  : Nov 24
+        - From  : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ -->
+    <!--Navbar-->
+	<div class="header">
+        <nav class="navbar">
+            <a href="index.htm" class="nav-logo">AlphaProductions</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a class="active" href="nav.htm">Product Solution</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="UserGuide.htm">User Guide</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ProcessSteps.htm">Process Steps</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="KoboForm.htm" >KoboToolbox Form</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="https://kobo.humanitarianresponse.info/api/v2/assets/anpv3H2CEtV6PzAcyfDgE6/data/" target="_blank">KoboToolbox Submission Data</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+	</div>
+    <!-- End Owner: Korey Hayes -->
+<div id="mapid"></div>
+<script type="text/javascript">
+	function PopUp(hideOrshow) {
+		if (hideOrshow == 'show') document.getElementById('ac-wrapper');
+		else document.getElementById('ac-wrapper').style.display = "none";
+	}
+	
+	// window.onload = function () {
+	// 	setTimeout(function () {
+	// 		PopUp('show');
+	// 	}, 5000);
+	// }
+	</script>
+
+<script>
+
+	var mymap = L.map('mapid').setView([44.3, -78.5], 9);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+
+	// // USING JQUERY (AJAX)
+	// var settings = {
+	// "url": "https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson",
+	// "method": "GET",
+	// "timeout": 0,
+	// "headers": {
+	// 	"Access-Control-Allow-Origin": "*",
+	// 	"Authorization": "Basic a29oYXllOkd1bmp1aWNlNTA5"
+	// },
+	// };
+
+	// $.ajax(settings).done(function (response) {
+	// console.log(response);
+	// });
+
+
+	// // USING FETCH
+	// var myHeaders = new Headers();
+	// myHeaders.append("Authorization", "Basic a29oYXllOkd1bmp1aWNlNTA5");
+	// myHeaders.append("Access-Control-Allow-Origin", "*");
+
+	// var requestOptions = {
+	// method: 'GET',
+	// headers: myHeaders,
+	// redirect: 'follow'
+	// };
+
+	// fetch("https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson", requestOptions)
+	// .then(response => response.text())
+	// .then(result => console.log(result))
+	// .catch(error => console.log('error', error));
+
+
+//  //  USING xhr
+// 	var xhr = new XMLHttpRequest();
+// xhr.withCredentials = true;
+
+// xhr.addEventListener("readystatechange", function() {
+//   if(this.readyState === 4) {
+//     console.log(this.responseText);
+//   }
+// });
+
+// xhr.open("GET", "https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson");
+// xhr.setRequestHeader("Authorization", "Basic a29oYXllOkd1bmp1aWNlNTA5");
+
+// xhr.send();
+
+	var geojsonLayer = new L.GeoJSON.AJAX("Kobo.geojson", {
+		onEachFeature: function (feature, layer) {
+			layer.bindPopup('<h1>'+feature.properties.Species+'</h1>');
+  }});
+	geojsonLayer.addTo(mymap);
+//It just shows that there was a photo saved and the name of the file. If we can find the location of the saved data this would be way better.
+//the geoJSON stores only text
+// geographic java script object "notation"
+
+
+	// var layerGroup = L.geoJSON.AJAX("Kobo/march30_2.geojson", {
+  	// onEachFeature: function (feature, layer) {
+    // layer.bindPopup('<h1>'+feature.Tree_Type+'</h1>');
+  	// }
+	// });
+	// layerGroup.addTo(mymap);
+
+	// var layerGroup = L.geoJSON.AJAX(data, {
+ 	// onEachFeature: function (feature, layer) {
+    // layer.bindPopup('<h1>'+feature.properties.f1+'</h1><p>name: '+feature.properties.f2+'</p>');
+ 	//  }
+	// }).addTo(mymap);
+	var popup = L.popup();
+
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent("<h3>Would you like to add a tree?<h3>" + 
+				"</br><a href=\"https://ee.kobotoolbox.org/single/fOVUuTza?returnUrl=https://nsodhi2908.github.io/collab/nav.htm\">Submission Form</a>")   //This here is just the onclick popup for anywhere on the map
+			.openOn(mymap);
+	}
+
+	mymap.on('click', onMapClick);
+
+	var rainviewer = L.control.rainviewer({
+			position: 'bottomleft',
+			nextButtonText: '>',
+			playStopButtonText: 'Start/Stop',
+			prevButtonText: '<',
+			positionSliderLabelText: "Time:",
+			opacitySliderLabelText: "Opacity:",
+			animationInterval: 500,
+			opacity: 0.3
+		});
+		rainviewer.addTo(mymap);
+	
+</script>
+</body>
+<script src="koreystuff/js.js"></script>
+</html>
+<!--It looks like we didn't need either of these
+Default is sufficient apparently-->
+<!-- Korey's API Token: 530f6a7248efa245bedc69e1652a7940670c8446 -->
+<!-- from website token - >  pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw
+    generated token - >      pk.eyJ1Ijoicmlsc3dlZW4iLCJhIjoiY2ttbnoyYmhyMDFueDJucmt1eXFtdzFzaSJ9.6_fVTtxydb8Boi0JX_wDdQ -->
