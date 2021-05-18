@@ -23,7 +23,7 @@
             <a href="index.htm" class="nav-logo">AlphaProductions</a>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a  href="nav.htm" class="nav-link">Product Solution</a>
+                    <a  href="https://nsodhi2908.github.io/collab/nav.htm" class="nav-link">Product Solution</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="UserGuide.htm">User Guide</a>
@@ -46,52 +46,122 @@
         </nav>
 	</div>
     <section class="sect">
-        <div class = "columnk4">
-            <img class = "image" src="image\AlphaProductionsLogo2.png" alt="AlphaProduction Logo">
+
+        
+        <div class = "columnk1">
+            <img class = "image" src="image/Problem.PNG" alt="Final Website" height="556px" width="416px">
         </div>
-        <div class = "columnk3">
-			<h1>Welcome to Alpha Productions!</h2>
-            <p>Hello, and welcome to the Product Solution Information page for AlphaProductions! Here are AlphaProductions
-				we are dedicated to the needs of our clients and will use the most efficient solutions to meet them!
-				We understand how to interpret problem requirements in a way that helps us deliver the best product possible!
-                For this project it was our objective to make an impact on the food security problem of the Kawartha Lakes
-				and Haliburton Region. The Kawartha Lakes Food Coalition has requested AlphaProductions to help the public
-				and increase food security by producing a web application that displays the locations and information on
-				various Fruit Trees within the Kawartha Lakes and Haliburton Region.
-            </p>
-			<h3>The Client</h3>
-			<p>The Kawartha Lakes Food Coalition is a not-for-profit organization that is dedicated to Food Security in the 
-                Kawartha Lakes, Haliburton, and Pine Ridge regions of Ontario. Made up of members of the community, the Food
-                Coalition is determined to increase Food Security by various means, including short-term relief (donations), 
-                capacity-building strategies (food banks and soup kitchens), and system redesign strategies that would make
-                 free food more accessible, continue the Basic Income Guarantee, increase Social Assistance rates,
-                 and increase Affordable Housing, which would help eliminate the need for the first two means.
-			</p>
-			<h3>The Problem</h3>
-			<p>According to <i>The Lindsay Advocate</i>, there are 10,000 citizens in the Kawartha Lakes region that
-                don't have enough to eat. The level of food insecurity in this region is one of the larget in the province,
-                sitting at 13.5% compared to the provincial average of 11.9%. Ultimately the public needs more resources.
-                One resource that can be made available is information on publicly accessible Fruit-Bearing Trees in the 
-                Kawarthas. Populated by the Public, Used by the Public.
-			</p>
-			<h3>The Solution</h3>
-            <p>Solving the issue of hunger in this area is a large feat. This group is not, by any means, claiming to be able 
-                to solve the issue with this project. We are, however, going to help the Food Coalition with their goal to provide
-                more resources to the public on the information and locations of locally-grown, publicly accessible Fruit-Bearing
-                Trees in the region. This project will consist of a Map to display information and the locations of locally-grown 
-                and publicly accessible Fruit-Bearing Trees, a Form for the public to use to submit new tree locations and information,
-                links for the public to learn how to utilize the fruit of those trees, and guides to help the public identify trees properly.
-            </p>
-            <h3>Next Steps</h3>
-            While it is our goal to let the public populate this map, it is understood that not everyone is an expert on identifying safe
-                sources of food. It is going to be a part of the project that we add in measures to control the quality of the data that is 
-                displayed. While essentially anything can be submitted (i.e. a Dumpster behind a restaurant) it is not in our interest to
-                display such a "food source". It is also a goal to ensure people are populating the map with correct (or at least realistic)
-                locations of trees. We do not want anyone adding tree data to a waterbody. This is going to be an incredible feat but we are 
-                determined to ensure the quality of data and that this map will require zero maintanence once we have released it to the client.
+        <div class = "columnk2">
+            <h2>1. Defining a Problem Statement</h2>
+            <br>
+            <p>The first step of the project was to define a problem statement and write a proposal which is as follows:</p>
+            <br>
+			<p class="subheader">Ideal- </p>
+			<p>People will be able to use a web application that displays the location of public sources of fruit 
+            tree to be accessed and to add new locations.</p>
+            <br>
+			<p class="subheader">Reality-</p>
+			<p>Public cannot find fruit trees. Members of public
+            cannot share the fruit trees they know of with the public. Members are left with fewer options of finding food.</p>
+            <br>
+			<p class="subheader">Consequences-</p>
+            <p>Fruits fall and die, creating excess food waste and increased risk due to dangerous interaction with wildlife.</p>
+            <br>
+            <p class="subheader">Proposal-</p>
+			<p>User will be able to submit Fruit Tree Data and view it on a web application.</p>
+
         </div>
     </section>
-
+    <section class="sect">
+       
+        <div class = "columnk3">
+            <img  class = "image" src="image/Webmap.JPG" alt="Webmap" width="550px" height="600px">
+        </div>
+        <div class = "columnk4">
+            <h2>2. Creating a Web Map</h2>
+            <br>
+			<p>A webpage was created containing a web map created using Leaflet which is the finished product for the project. 
+            It is a website that works for both desktop and smartphone web browser. It will allow the users to view this map and hence view the 
+            data has already been added by the other users. Users may click on the map to add more tree data by filling the submission form.</p>
+            <br>
+            
+        </div>
+    </section>
+    <section class="sect">
+        <div class = "columnk1">
+            <img  class = "image" src="image/KoboForm.JPG" alt="Submission Form" width="550px" height="800px">
+        </div>
+        <div class = "columnk2">
+            <h2>3. Exploring KoboToolbox</h2>
+            <br>
+			<p>Out of the Open Source Solutions, we decided to explore KoboToolbox which is an excellent alternative to Survey 123 
+            and is truly open source to finish our project. A form for the public to submit the tree data was created using KoboToolbox. 
+            We created the form so that the user could be allowed to set the location and choose the plant type (Tree/Shrub).</p>
+            <br>
+            <p>We also tried to add a question/option in the form for the users to be able to upload the picture of the tree that they submit on
+            the map. But the image did not display so we decided to get rid of that option.</p>
+            <br>
+            <p>The KoboToolbox data is hosted publicly by a built-in server. Access to this can be obtained using the share URL and additional parameters.
+            The form when given public accessibilty, generates a URL. The Kobo server allows the users access to the data endpoint and with the generated 
+            URL, the user can access the submissions page where different GET requests can be made.
+            After selecting GET>GeoJSON, the raw GeoJSON that hold up-to date data from the form's submissions can be viewed.</p>
+            <br>
+            <p>Now , the data added could be downloaded manually for it to view on the product solution web map. In the data section of KoboToolbox , there is an export function. 
+            We figured out we had to download the file in geoJSON format while ensuring that the “flatten geoJSON”option was selected. 
+            After we click “export”, the file is prepared by KoboToolbox and we just had to click on download to download the submitted data.</p>
+        </div>
+    </section>
+    <section class="sect">
+        
+        <div class = "columnk3">
+            <img  class = "image" src="image/Workflows.JPG" alt="Workflow">
+        </div>
+        <div class = "columnk4">
+            <h2>4. Automation </h2>
+            <br>
+            <p>Now that the previous step was accomplished, the next goal of our team was to figure out the automation of the data so that data 
+            did not have to be manually downloaded. Various methods were tried in order to achieve this. </p>
+            <br>
+            <p class="subheader">Trial and Error!</p>
+            <p>The URL generated when the GET GeoJSON request was made, can be further integrated into a jQuery request in the html document in order
+            to automate the data transfer process.</p>
+            <br> 
+            <p>Using Postman, URL can be added which automatically configured a GET GeoJSON request. Postman auto-generated a request in the user selected
+            format and we selected jQuery for this purpose. Now with our new jQUery request, we wanted to integrate the response a variable to be used in the
+            AJAX call that adds the data to the map.</p>
+            <br>
+            <p>Unfortunately, this returned a CORS error, which we thought was an authorization error. But it was later found out to be due to the origin
+            of the data being different than the domain in which the request was being sent (in this case Github).</p> 
+            <br>
+            <p class="subheader">Success!</p>
+            <p>The automation of the data was achieved using Github’s Actions functionality that allows the owner of a
+            repository to set up a workflow that runs script within the repository.</p>
+            <br>
+            <p>For this, Postman.com was used to develop the python code required to get the KoboToolbox form submission data in geoJSON format 
+            using the appropriate authorization credentials which was encrypted by Postman for security. After a code was generated by Postman, 
+            a section of code was added to the script that took the response from the data request and wrote it to geoJSON file in the repository.</p>
+            <br> 
+            <p>Once the script was finalized and its functioning was ensured, a work space was set up in the github repository to call the script file 
+            from the repository. To do this, a YAML file was created that tells Github to complete tasks that were defined within the YAML file. 
+            The YAML file was set up to run on on a schedule time. This process help achieve the goal of downloading the data automatically rather
+             than downloading it manually.</p>
+        </div>
+    </section>
+    <section class="sect">
+        
+            <div class = "columnk1">
+                    <img  class = "image" src="image/RainCapture.PNG" alt="PopupCapture">
+                </div>
+            <div class = "columnk4">
+                <h2>5. Presentation </h2>
+                <br>
+                <p>The main component of this project is a web map. This allowed us for a creation of a cartographic output. To add a cartographic 
+                element to the web map that could be benifitial to the users, we decided to explore on the various aspects of Leaflet. 
+                We explored the Leaflet plug-ins and finally decided to add the Rainviewer plug-in to our final product. This plug-in is a 
+                weather radar for the rain and the users could review it to have a look at the weather and plan their day ahead to come out for
+                 collecting the data or harvesting the fruits.</p>
+            </div>
+        </section>
     <!-- End Owner: Korey Hayes -->
         <!--
         - Owner : Jennifer Debono

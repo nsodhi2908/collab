@@ -14,7 +14,6 @@
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.min.js"></script>
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script> <!-- Needed -->
 	<link rel="stylesheet" href="stylePlay.css">
-	<script src="https://unpkg.com/@turf/turf"></script>
 	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
@@ -155,17 +154,11 @@
 
 // xhr.send();
 
-	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
+	var geojsonLayer = new L.GeoJSON.AJAX("Kobo.geojson", {
 		onEachFeature: function (feature, layer) {
-			layer.bindPopup('<center>' + feature.properties.Species + 
-            '<br><center> Comments: ' + feature.properties.Comments);
-				
+			layer.bindPopup('<h1>'+feature.properties.Species+'</h1>');
   }});
 	geojsonLayer.addTo(mymap);
-
-	
-
-//=isInside2
 //It just shows that there was a photo saved and the name of the file. If we can find the location of the saved data this would be way better.
 //the geoJSON stores only text
 // geographic java script object "notation"
@@ -206,19 +199,7 @@
 			opacity: 0.3
 		});
 		rainviewer.addTo(mymap);
-
-	var searchControl = new L.Control.Search({
-		layer: geojsonLayer,
-		propertyName: 'Species',
-		marker: false,
-		moveToLocation: function(latlng, title, map) {
-			//map.fitBounds( latlng.layer.getBounds() );
-			var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-  			map.setView(latlng, zoom); // access the zoom
-		}
-		});
-	map.addControl( searchControl );  //inizialize search control
-
+	
 </script>
 </body>
 <script src="koreystuff/js.js"></script>
