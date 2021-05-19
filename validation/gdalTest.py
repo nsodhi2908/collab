@@ -4,11 +4,13 @@ geojson = """{"type":"Point","coordinates":[108420.33,753808.59]}"""
 point = ogr.CreateGeometryFromJson(geojson)
 print ("%d,%d" % (point.GetX(), point.GetY()))
 
+
+# # Tried this. It doesn't work. Gives FileNotFound error with subprocess.Popen(args)
 # import urllib, geojson, gdal, subprocess
 # url= ' http://ig3is.grid.unep.ch/istsos/wa/istsos/services/ghg/procedures/operations/geojson?epsg=4326'
 # response = urllib.urlopen(url)
 # data = geojson.loads(response.read())
-
+# # 
 # with open('data.geojson', 'w') as f:
 #     geojson.dump(data, f)
 
