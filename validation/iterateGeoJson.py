@@ -1,8 +1,10 @@
-import geojson, json, ogr
-# from shapely.geometry import shape, Point
+import geojson, json
+from shapely.geometry import shape, point
+from shapely.geometry.point import Point
 geoPoints = open(r"validation\geoJSON.geojson", "r")
-criteriaPoints = open(r"validation\Criteria.geojson", "r")
+criteriaPoints = open(r"validation\polygon.geojson", "r")
 geodict = json.load(geoPoints)
+criteriadict = json.load(criteriaPoints)
 resultPoints = open(r"validation\result.geojson", "w")
 # geoHeader = [ '{', '"', 'type','"',':', '"','FeatureCollection','"', ',' , '"', 'name' , '"', ':',  '"', 'Collab', '"', ',', '"', 'features', '"', ':',  '[' ]
 
@@ -18,9 +20,12 @@ feature_collection = {"type": "FeatureCollection",
     # geojson.dump(i, resultPoints)
 for feat in geodict["features"]:
     print(feat["geometry"]["coordinates"])
-    if ogr.Geometry.Contains(criteriaPoints, geoPoints) == True:
-        feature_collection["features"].append(feat)
-        print(feat["geometry"]["coordinates"])
+    myPoint = feat["geometry"]["coordinates"]
+    for feature in criteriadict["features"]:
+        polygon = shape(feature["geometry"])
+        if polygon.contains(Point(myPoint)):
+            feature_collection["features"].append(feat)
+            print(feat["geometry"]["coordinates"])
         # geojson.dump(feat, resultPoints)
         # # resultPoints.append(feat) --> did not work
     # for points in feat["geometry"]:
