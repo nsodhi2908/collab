@@ -68,9 +68,9 @@
 
             // Continue implementing the control here.
             let radius = 50;
-            //每一个BOX对应的角度;
+            
             let avd = 360 / labels.length;
-            //每一个BOX对应的弧度;
+            
             let ahd = avd * Math.PI / 180;
 
             for (let i = 0; i < labels.length; i++) {

@@ -9,12 +9,12 @@
     background-image: url("images/zoom.png");
     background-size: cover;
     position: absolute;
-    left: 50%; /* 定位父级的50% */
+    left: 50%; 
     top: 50%;
-    transform: translate(-50%, -50%); /*自己的50% */
+    transform: translate(-50%, -50%); 
     cursor: pointer;
     border-radius: 3px;
-    -moz-box-shadow: 2px 2px 2px #888888; /* 老的 Firefox */
+    -moz-box-shadow: 2px 2px 2px #888888; 
     box-shadow: 2px 2px 2px #888888;
   }
   
@@ -22,6 +22,6 @@
     cursor: pointer;
     border-radius: 3px;
     border: 1px solid #888888;
-    -moz-box-shadow: 2px 2px 2px #888888; /* 老的 Firefox */
+    -moz-box-shadow: 2px 2px 2px #888888; 
     box-shadow: 2px 2px 2px #888888;
   }
