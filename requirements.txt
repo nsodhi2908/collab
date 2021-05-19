@@ -4,4 +4,5 @@ json
 subprocess
 osgeo
 gdal
+ogr
 proj
