@@ -208,7 +208,15 @@
 		});
 		rainviewer.addTo(mymap);
 
-	mymap.addControl( new L.Control.Compass() );
+	
+
+	
+
+	var comp = new L.Control.Compass({autoActive: true, showDigit:true});
+
+	mymap.addControl(comp);
+
+
 
 	// var searchControl = new L.Control.Search({
 	// 	layer: geojsonLayer,
