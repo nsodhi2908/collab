@@ -13,8 +13,9 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.min.js"></script>
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script> <!-- Needed -->
+
 	<link rel="stylesheet" href="stylePlay.css">
-	<script src="https://unpkg.com/@turf/turf"></script>
+	<link rel="stylesheet" href="https://labs.easyblog.it/maps/leaflet/dist/leaflet.css">
 	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
@@ -25,7 +26,9 @@
 	<script type="text/python" src="request.py"></script>
 	<link rel="stylesheet" type="text/css" href="navv/rainviewer.css">
 	<script type="text/javascript" src="navv/rain.js"></script>
-	
+	<script type="text/javascript" src="Riley/Compass.js"></script>
+	<link rel="stylesheet" type="text/css" href="navv/rainviewer.css">
+	<link rel="stylesheet" type="text/css" href="Riley/Compass.css">
 </head>
 <body>
 		<div id="ac-wrapper">
@@ -207,17 +210,28 @@
 		});
 		rainviewer.addTo(mymap);
 
-	var searchControl = new L.Control.Search({
-		layer: geojsonLayer,
-		propertyName: 'Species',
-		marker: false,
-		moveToLocation: function(latlng, title, map) {
-			//map.fitBounds( latlng.layer.getBounds() );
-			var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-  			map.setView(latlng, zoom); // access the zoom
-		}
-		});
-	map.addControl( searchControl );  //inizialize search control
+	
+
+	
+
+	var comp = new L.Control.Compass({autoActive: true, showDigit:true});
+
+	mymap.addControl(comp);
+
+
+
+	// var searchControl = new L.Control.Search({
+	// 	layer: geojsonLayer,
+	// 	propertyName: 'Species',
+	// 	marker: false,
+	// 	moveToLocation: function(latlng, title, map) {
+	// 		//map.fitBounds( latlng.layer.getBounds() );
+	// 		var zoom = map.getBoundsZoom(latlng.layer.getBounds());
+  	// 		map.setView(latlng, zoom); // access the zoom
+	// 	}
+	// 	});
+	// map.addControl( searchControl );  //inizialize search control
+	// Error Occurs: L.Control.Search is not a constructor
 
 </script>
 </body>
