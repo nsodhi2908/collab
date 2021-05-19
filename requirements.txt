@@ -1,8 +1,4 @@
 requests
 geojson
 json
-subprocess
-osgeo
-gdal
-ogr
-proj
+shapely
