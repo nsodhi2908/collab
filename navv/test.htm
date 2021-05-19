@@ -68,6 +68,13 @@
 	}
 
 	mymap.on('click', onMapClick);
+
+	// You can add the control via the settings object
+	var map = L.map("map", {
+        layers: [layer]
+      }).setView([57.7, 11.9], 8);
+	  new L.zoompanel().addTo(map);
+	  
 	</script>
 
 </body>
