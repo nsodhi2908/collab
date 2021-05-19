@@ -25,7 +25,7 @@
 	height: 32px;
 	width: 32px;
 	margin: 2px;
-	background: url('../images/compass-icon.png') center center no-repeat;
+	background: url('https://raw.githubusercontent.com/stefanocudini/leaflet-compass/c15c64da0b881a80f8b5b129d3c0a420c95d74ac/images/compass-icon.svg') center center no-repeat;
 }
 
 .leaflet-compass .compass-digit {
