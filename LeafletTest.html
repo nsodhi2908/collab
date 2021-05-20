@@ -197,7 +197,8 @@
 
 	map.addControl( new L.Control.Search({
 		container: 'findbox',
-		layer: markersLayer,
+		layer: geojsonLayer,
+		propertyName: 'Species',
 		initial: false,
 		collapsed: false
 	}) );
