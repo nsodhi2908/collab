@@ -1,7 +1,10 @@
 {
 "type": "FeatureCollection",
-"name": "FruitTreeMap",
+"name": "Fruit Tree Map Data Form",
 "features": [
-{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-79.482061, 43.997594, 0.0]}, "properties": {"Species": "Apple, Common", "Comments": "This tree produces many apples"}}
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.701865, 44.370189, 0.0]}, "properties": {"Species": "Apple, Common", "Comments": "Produces very few apples."}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.708219, 44.359267, 0.0]}, "properties": {"Species": "Maple, Black", "Comments": "Many maples in this area."}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.723451, 44.356322, 0.0]}, "properties": {"Species": "Chestnut, American", "Comments": "Located ~2m West of walking path."}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.721898, 44.339995, 0.0]}, "properties": {"Species": "Raspberry, Wild Red", "Comments": "Very plentiful, ripe and delicious."}}
 ]
 }
