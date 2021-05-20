@@ -166,7 +166,7 @@
 
 	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
 		onEachFeature: function (feature, layer) {
-			layer.bindPopup('<b><center>' + feature.properties.Species + 
+			layer.bindPopup('<b><center></b>' + feature.properties.Species + 
             '<br> Comments: ' + feature.properties.Comments);
 				
   }});
