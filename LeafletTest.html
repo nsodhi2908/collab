@@ -175,7 +175,8 @@
 //Search Bar Start
 
 	var controlSearch = new L.Control.Search({
-		position:'topright',		
+		position:'topright',
+		propertyName: 'Species',		
 		layer: geojsonLayer,
 		initial: false,
 		zoom: 12,
@@ -184,14 +185,7 @@
 
 	mymap.addControl( controlSearch );
 
-	////////////populate map with markers from sample data
-	for(i in data) {
-		var title = data[i].title,	//value searched
-			loc = data[i].loc,		//position found
-			marker = new L.Marker(new L.latLng(loc), {title: title} );//se property searched
-		marker.bindPopup('title: '+ title );
-		geojsonLayer.addLayer(marker);
-	}
+	
 
 //=isInside2
 //It just shows that there was a photo saved and the name of the file. If we can find the location of the saved data this would be way better.
