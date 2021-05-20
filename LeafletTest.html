@@ -185,9 +185,15 @@
 
 	mymap.addControl( controlSearch );
 	
-	controlSearch.on('search_locationfound', function(event) {
-    	event.layer.openPopup();
-	});
+	searchControl.on('search:locationfound', function(e) {
+		
+		//console.log('search:locationfound', );
+
+		//map.removeLayer(this._markerSearch)
+
+		e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
+		if(e.layer._popup)
+			e.layer.openPopup();
 
 	
 
