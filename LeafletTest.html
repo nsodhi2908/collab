@@ -179,7 +179,7 @@ var searchControl = new L.Control.Search({
 		layer: geojsonLayer,
 		propertyName: 'Species',
 		marker: false,
-		moveToLocation: function(latlng, title, mymap) {
+		moveToLocation: function(latlng, title, map) {
 			//map.fitBounds( latlng.layer.getBounds() );
 			var zoom = mymap.getBoundsZoom(latlng.layer.getBounds());
   			mymap.setView(latlng, zoom); // access the zoom
