@@ -173,29 +173,18 @@
 	geojsonLayer.addTo(mymap);
 	
 
-	//vytvoření panelu pro vyhledávání
-	var searchControl = new L.Control.Search({
+	//Search Bar Start
+
+	var controlSearch = new L.Control.Search({
+		position:'topright',
+		propertyName: 'Species',		
 		layer: geojsonLayer,
-		propertyName: 'Species',  // pole přes které se vyhledává
-	circleLocation: true,
-	marker: false,
-
-
-	moveToLocation: function(latlng, catalogNumber, map) { console.log(latlng); mymap.setView(latlng, 10); } 
+		initial: false,
+		zoom: 12,
+		marker: false
 	});
 
-	searchControl.on('search:locationfound', function(e) {
-
-		//console.log('search:locationfound', );
-
-
-
-			e.layer.openPopup("OBJECTID");
-
-	}).on('search:collapsed', function(e) {
-
-	featuresLayer.eachLayer(function(layer) {   //restore feature color
-	featuresLayer.resetStyle(layer);
+	mymap.addControl( controlSearch );
 	
 
 
