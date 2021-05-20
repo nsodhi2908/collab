@@ -34,6 +34,26 @@
     <!-- Search Bar-->
     <script src="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.js"></script>
     <link rel="stylesheet" href="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.css">
+<style>
+	#findbox {
+	background: #eee;
+	border-radius:.125em;
+	border:2px solid #1978cf;
+	box-shadow: 0 0 8px #999;	
+	margin-bottom: 10px;
+	padding: 2px 0;
+	width: 600px;
+	height: 26px;
+}
+.search-tooltip {
+	width: 200px;
+}
+.leaflet-control-search .search-cancel {
+	position: static;
+	float: left;
+	margin-left: -22px;
+}
+</style>
 </head>
 <body>
 		<div id="ac-wrapper">
@@ -175,17 +195,13 @@
 
 	//Search Bar Start
 
-	var controlSearch = new L.Control.Search({
-			position:'topright',
-			propertyName: 'Species',		
-			layer: geojsonLayer,
-			initial: false,
-			zoom: 12,
-			marker: false
-			
-		});
-
-		mymap.addControl( controlSearch );
+	map.addControl( new L.Control.Search({
+		container: 'findbox',
+		layer: markersLayer,
+		initial: false,
+		collapsed: false
+	}) );
+	//inizialize search control
 
 
 
