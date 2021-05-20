@@ -193,16 +193,20 @@
 	geojsonLayer.addTo(mymap);
 	
 
+	
+	
 	//Search Bar Start
 
-	mymap.addControl( new L.Control.Search({
-		container: 'findbox',
+	var controlSearch = new L.Control.Search({
+		position:'topright',
+		propertyName: 'Species',		
 		layer: geojsonLayer,
-		propertyName: 'Species',
 		initial: false,
-		collapsed: false
-	}) );
-	//inizialize search control
+		zoom: 12,
+		marker: false
+	});
+
+	mymap.addControl( controlSearch );
 
 
 
