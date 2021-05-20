@@ -115,6 +115,38 @@
 		zoomOffset: -1
 	}).addTo(mymap);
 
+    //Search Bar Start
+
+    var searchControl = new L.Control.Search({
+		layer: geojsonLayer,
+		propertyName: 'Species',
+		marker: false,
+		moveToLocation: function(latlng, title, mymap) {
+			//map.fitBounds( latlng.layer.getBounds() );
+			var zoom = mymap.getBoundsZoom(latlng.layer.getBounds());
+  			mymap.setView(latlng, zoom); // access the zoom
+		}
+	});
+
+	searchControl.on('search:locationfound', function(e) {
+		
+		//console.log('search:locationfound', );
+
+		//map.removeLayer(this._markerSearch)
+
+		e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
+		if(e.layer._popup)
+			e.layer.openPopup();
+
+	}).on('search:collapsed', function(e) {
+
+		geojsonLayer.eachLayer(function(layer) {	//restore feature color
+			geojsonLayer.resetStyle(layer);
+		});	
+	});
+	
+	mymap.addControl( searchControl );  //inizialize search control
+
 	// // USING JQUERY (AJAX)
 	// var settings = {
 	// "url": "https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson",
