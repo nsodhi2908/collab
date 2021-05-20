@@ -1,5 +1,5 @@
 import geojson, json
-from shapely.geometry import shape, point
+from shapely.geometry import shape
 from shapely.geometry.point import Point
 geoPoints = open(r"validation\geoJSON.geojson", "r")
 criteriaPoints = open(r"validation\polygon.geojson", "r")
