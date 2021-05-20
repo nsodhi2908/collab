@@ -184,6 +184,10 @@
 	});
 
 	mymap.addControl( controlSearch );
+	
+	controlSearch.on('search_locationfound', function(event) {
+    	event.layer.openPopup();
+	});
 
 	
 
