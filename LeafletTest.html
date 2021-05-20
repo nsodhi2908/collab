@@ -173,19 +173,58 @@
 	geojsonLayer.addTo(mymap);
 	
 
-	//Search Bar Start
+	////////////////////////////////////////////////////////////////////////////////////////////
+	//creating the selector control//
+	////////////////////////////////////////////////////////////////////////////////////////////
 
-	var controlSearch = new L.Control.Search({
-		position:'topright',
-		propertyName: 'Species',		
-		layer: geojsonLayer,
-		initial: false,
-		zoom: 12,
-		marker: false
+	//create Leaflet control for selector
+	var selector = L.control({
+	position: 'topright'
 	});
 
-	mymap.addControl( controlSearch );
-	
+	selector.onAdd = function(mymap) {
+	//create div container
+	var div = L.DomUtil.create('div', 'mySelector');
+	//create select element within container (with id, so it can be populated later)
+	div.innerHTML = '<select id="marker_select"><option value="init">(select station)</option></select>';
+	return div;
+	};
+
+	selector.addTo(mymap);
+
+	//have to use eachFeature (instead of onEachFeature) to create selector options
+	//because _leaflet_id doesn't exist until after each feature is created
+	geojsonLayer.eachLayer(function(layer) {
+	//create option in selector element
+	//with content set to city name
+	//and value set to the layer's internal ID
+	var optionElement = document.createElement("option");
+	optionElement.innerHTML = layer.feature.properties.Species;
+	optionElement.value = layer._leaflet_id;
+	L.DomUtil.get("marker_select").appendChild(optionElement);
+	});
+
+	////////////////////////////////////////////////////////////////////////////////////////////
+	//setting up event listeners//
+	////////////////////////////////////////////////////////////////////////////////////////////
+
+	var marker_select = L.DomUtil.get("marker_select");
+
+	//prevent clicks on the selector from propagating through to the map
+	//(otherwise popups will close immediately after opening)
+	L.DomEvent.addListener(marker_select, 'click', function(e) {
+	L.DomEvent.stopPropagation(e);
+	});
+
+	L.DomEvent.addListener(marker_select, 'change', changeHandler);
+
+	function changeHandler(e) {
+	if (e.target.value == "init") {
+		map.closePopup();
+	} else {
+		geojsonLayer.getLayer(e.target.value).openPopup();
+	}
+
 
 
 //=isInside2
