@@ -166,8 +166,8 @@
 
 	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
 		onEachFeature: function (feature, layer) {
-			layer.bindPopup('<center>' + feature.properties.Species + 
-            '<br><center> Comments: ' + feature.properties.Comments);
+			layer.bindPopup('<b><center>' + feature.properties.Species + 
+            '<br> Comments: ' + feature.properties.Comments);
 				
   }});
 	geojsonLayer.addTo(mymap);
@@ -182,9 +182,14 @@
 			initial: false,
 			zoom: 12,
 			marker: false
+			
 		});
 
 		mymap.addControl( controlSearch );
+
+		onEachFeature: function (feature, layer) {
+			layer.bindPopup('<center>' + feature.properties.Species + 
+            '<br><center> Comments: ' + feature.properties.Comments);
 
 
 
