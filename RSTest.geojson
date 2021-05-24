@@ -2,6 +2,18 @@
 "type": "FeatureCollection",
 "name": "Fruit Tree Map Data Form",
 "features": [
-{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.701865, 44.370189, 0.0]}, "properties": {"Species": "Apple, Common", "Comments": "Produces very few apples.", "_id": 178912018, "_uuid": "7ee4f32c-7371-4caa-9ea9-0cc1fd5ba2e8", "_submission_time": "2021-05-20T16:04:58", "_status": "submitted_via_web"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.701865, 44.370189, 0.0]}, "properties": {"Species": "Apple, Common", "Comments": "Produces very few apples."}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.708219, 44.359267, 0.0]}, "properties": {"Species": "Maple, Black", "Comments": "Many maples in this area."}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.723451, 44.356322, 0.0]}, "properties": {"Species": "Chestnut, American", "Comments": "Located ~2m West of walking path."}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.721898, 44.339995, 0.0]}, "properties": {"Species": "Raspberry, Wild Red", "Comments": "Very plentiful, ripe and delicious."}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-76.568412, 44.23487, 82.6515121459961]}, "properties": {"Species": "Pine, Eastern White"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-76.567504, 44.235417, 86.61222076416016]}, "properties": {"Species": "Hemlock, Eastern"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-76.655601, 44.215999, 80.95706939697266]}, "properties": {"Species": "Maple, Black", "Comments": "In a public park"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-76.49879, 44.222272, 0.0]}, "properties": {"Species": "Walnut, Black"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-76.495957, 44.222595, 0.0]}, "properties": {"Species": "Maple, Black"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-76.494479, 44.222942, 94.37643432617188]}, "properties": {"Species": "Pine, Eastern White"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-76.489346, 44.226539, 94.34986114501953]}, "properties": {"Species": "Maple, Sugar"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-76.487149, 44.225503, 94.36376953125]}, "properties": {"Species": "Hemlock, Eastern"}},
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-76.468314, 44.232939, 94.37999725341797]}, "properties": {"Species": "Maple, Sugar"}}
 ]
 }
