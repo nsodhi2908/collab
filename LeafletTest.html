@@ -177,7 +177,8 @@
 			layer.bindPopup('<b><center> Species:' + feature.properties.Species + '<br> Species Name if Other: ' + feature.properties.OtherTreeName +
 			'<br> Comments: ' + feature.properties.Comments + '<br>' + 
 			'<img src= "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F'+ 
-			feature.properties.Point_and_shoot_Use_mera_to_take_a_photo + '"' +' style="width:200px;height:200px;">');
+			feature.properties.Point_and_shoot_Use_mera_to_take_a_photo + '"' +' style="width:200px;height:200px;">' + '<br>' + '<a href=\"'+ feature.properties.link009 + '">Plant Information</a>'
+			+ '<br>' + '<a href=\"'+ feature.properties.link035 + '">Plant Information</a>' );
 				
   }});
 	geojsonLayer.addTo(mymap);
