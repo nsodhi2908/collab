@@ -164,7 +164,7 @@
 // xhr.setRequestHeader("Authorization", "Basic a29oYXllOkd1bmp1aWNlNTA5");
 
 // xhr.send();
-	var getImage = (geojsonLayer.feature.properties.Point_and_shoot_Use_mera_to_take_a_photo);
+	var getImage = geojsonLayer.feature.properties.Point_and_shoot_Use_mera_to_take_a_photo;
 	var imageURL = "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F";
 	var fullImageURL = imageURL.concat(getImage);
 
