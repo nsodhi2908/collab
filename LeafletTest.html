@@ -164,14 +164,23 @@
 // xhr.setRequestHeader("Authorization", "Basic a29oYXllOkd1bmp1aWNlNTA5");
 
 // xhr.send();
+	//var getImage = geojson.feature.properties.Point_and_shoot_Use_mera_to_take_a_photo;
+	//var imageURL = "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F";
+	//var fullImageURL = imageURL.concat(getImage);
+
+	//var geojson = L.geoJSON("RSTest.geojson");
+
+	// '<img src="'+ feature.properties.Picture +'" style="width:100px;height:100px;">'
 
 	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
 		onEachFeature: function (feature, layer) {
-			layer.bindPopup('<b><center> Species:' + feature.properties.Species + 
-            '<br> Comments: ' + feature.properties.Comments);
+			layer.bindPopup('<b><center> Species:' + feature.properties.Species + '<br> Species Name if Other: ' + feature.properties.OtherTreeName +
+            '<br> Comments: ' + feature.properties.Comments + '<br>' + '<img src= "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F'+ feature.properties.Point_and_shoot_Use_mera_to_take_a_photo + '"' +' style="width:200px;height:200px;">');
 				
   }});
 	geojsonLayer.addTo(mymap);
+	
+//PHOTOS FOUND HERE: https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F + Image Name
 	
 
 	
