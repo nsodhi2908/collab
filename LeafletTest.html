@@ -175,7 +175,7 @@
 	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
 		onEachFeature: function (feature, layer) {
 			layer.bindPopup('<b><center> Species:' + feature.properties.Species + 
-            '<br> Comments: ' + feature.properties.Comments + '<br>' + '<img src=https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F"'+ feature.properties.Point_and_shoot_Use_mera_to_take_a_photo +'" style="width:100px;height:100px;">' );
+            '<br> Comments: ' + feature.properties.Comments + '<br>' + '<img src=https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F'+ feature.properties.Point_and_shoot_Use_mera_to_take_a_photo +'style="width:100px;height:100px;"">' );
 				
   }});
 	geojsonLayer.addTo(mymap);
