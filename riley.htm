@@ -23,12 +23,15 @@
 	<!-- <script type="text/javascript" src="Leaflet\ajax.js"></script> -->
 	<!-- <script type="text/javascript" src="march30_4.json"></script> -->
 	<!-- <script type="text/javascript" src="Kobo\march30_2.json"></script> -->
+	<script type="text/javascript" src="koreystuff/jquery213.js"></script>
 	<script type="text/python" src="request.py"></script>
 	<link rel="stylesheet" type="text/css" href="navv/rainviewer.css">
 	<script type="text/javascript" src="navv/rain.js"></script>
 	<script type="text/javascript" src="Riley/Compass.js"></script>
 	<link rel="stylesheet" type="text/css" href="navv/rainviewer.css">
 	<link rel="stylesheet" type="text/css" href="Riley/Compass.css">
+	<script type="text/javascript" src="koreystuff/js.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 		<div id="ac-wrapper">
@@ -161,8 +164,9 @@
 	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
 		onEachFeature: function (feature, layer) {
 			layer.bindPopup('<center>' + feature.properties.Species + 
-            '<br><center> Comments: ' + feature.properties.Comments);
-				
+            '<br><center> Comments: ' + feature.properties.Comments +
+			'<br>' +
+			'<i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>')				
   }});
 	geojsonLayer.addTo(mymap);
 
@@ -236,6 +240,8 @@
 </script>
 </body>
 <script src="koreystuff/js.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 </html>
 <!--It looks like we didn't need either of these
 Default is sufficient apparently-->

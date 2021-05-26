@@ -14,3 +14,6 @@ function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }
+function myFunction(x) {
+    x.classList.toggle("fa-thumbs-down");
+  }

@@ -255,7 +255,28 @@ background-color: #4e6d26;
     width:100%;}
 
 /* End of Mobile Formatting */
-
+.like,
+.dislike {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background: lightgreen;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+}
+.qty1,
+.qty2 {
+    border: none;
+    width:20px;
+    background: transparent;
+}
 /* Beginning of Computer Monitor Formatting */
 @media only screen and (max-width: 768px) {
   .nav-menu {
