@@ -164,14 +164,19 @@
 // xhr.setRequestHeader("Authorization", "Basic a29oYXllOkd1bmp1aWNlNTA5");
 
 // xhr.send();
+	var getImage = (geojsonLayer.feature.properties.Point_and_shoot_Use_mera_to_take_a_photo);
+	var imageURL = "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F";
+	var fullImageURL = imageURL.concat(getImage);
 
 	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
 		onEachFeature: function (feature, layer) {
 			layer.bindPopup('<b><center> Species:' + feature.properties.Species + 
-            '<br> Comments: ' + feature.properties.Comments);
+            '<br> Comments: ' + feature.properties.Comments + '<br>' + fullImageURL);
 				
   }});
 	geojsonLayer.addTo(mymap);
+	
+//PHOTOS FOUND HERE: https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F + Image Name
 	
 
 	
