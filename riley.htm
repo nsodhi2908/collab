@@ -33,6 +33,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
 		<div id="ac-wrapper">
 		<div id="popup">
 			<center>
@@ -118,7 +119,7 @@ function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }
-  </script>
+</script>
 <script>
 
 	var mymap = L.map('mapid').setView([44.3, -78.5], 9);
@@ -183,9 +184,7 @@ function closeMenu() {
 	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
 		onEachFeature: function (feature, layer) {
 			layer.bindPopup('<center>' + feature.properties.Species + 
-            '<br><center> Comments: ' + feature.properties.Comments +
-			'<br>' +
-			'<i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>')				
+            '<br><center> Comments: ' + feature.properties.Comments)	
   }});
 	geojsonLayer.addTo(mymap);
 
@@ -258,11 +257,11 @@ function closeMenu() {
 
 </script>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="js/like-dislike.js"></script>
 </html>
-<!--It looks like we didn't need either of these
-Default is sufficient apparently-->
-<!-- Korey's API Token: 530f6a7248efa245bedc69e1652a7940670c8446 -->
-<!-- from website token - >  pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw
-    generated token - >      pk.eyJ1Ijoicmlsc3dlZW4iLCJhIjoiY2ttbnoyYmhyMDFueDJucmt1eXFtdzFzaSJ9.6_fVTtxydb8Boi0JX_wDdQ -->
+// <!--It looks like we didn't need either of these
+// Default is sufficient apparently-->
+// <!-- Korey's API Token: 530f6a7248efa245bedc69e1652a7940670c8446 -->
+// <!-- from website token - >  pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw
+//     generated token - >      pk.eyJ1Ijoicmlsc3dlZW4iLCJhIjoiY2ttbnoyYmhyMDFueDJucmt1eXFtdzFzaSJ9.6_fVTtxydb8Boi0JX_wDdQ -->
