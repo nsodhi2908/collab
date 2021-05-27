@@ -172,34 +172,34 @@
 
 	// '<img src="'+ feature.properties.Picture +'" style="width:100px;height:100px;">'
 
-// 	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
-// 		onEachFeature: function (feature, layer) {
-// 			layer.bindPopup('<b><center> Species:' + feature.properties.Species + '<br> Species Name if Other: ' + feature.properties.OtherTreeName +
-// 			'<br> Comments: ' + feature.properties.Comments + '<br>' + 
-// 			'<img src= "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F'+ 
-// 			feature.properties.Point_and_shoot_Use_mera_to_take_a_photo + '"' +' style="width:200px;height:200px;">' + '<br>' + '<a href=\"'+ feature.properties.link_009 + '">Plant Information</a>'
-// 			+ '<br>' + '<a href=\"'+ feature.properties.link_035 + '">Plant Information</a>' );
+	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
+		onEachFeature: function (feature, layer) {
+			layer.bindPopup('<b><center> Species:' + feature.properties.Species + '<br> Species Name if Other: ' + feature.properties.OtherTreeName +
+			'<br> Comments: ' + feature.properties.Comments + '<br>' + 
+			'<img src= "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F'+ 
+			feature.properties.Point_and_shoot_Use_mera_to_take_a_photo + '"' +' style="width:200px;height:200px;">' + '<br>' + '<a href=\"'+ 
+			feature.properties.link_009 + '">Plant Information</a>');
 				
-//   }});
-// 	geojsonLayer.addTo(mymap);
+  }});
+	geojsonLayer.addTo(mymap);
 	
 //PHOTOS FOUND HERE: https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F + Image Name
 //CONTROLLING LINK POP-UPS	
-	var popupText = new L.GeoJSON.AJAX("RSTest.geojson", {
-		onEachFeature: function (feature, layer) {
+	// var popupText = new L.GeoJSON.AJAX("RSTest.geojson", {
+	// 	onEachFeature: function (feature, layer) {
 
-		if (feature.properties.link_009) {
-			layer.bindPopup('<b><center> Species:' + feature.properties.Species + '<br> Species Name if Other: ' + 
-				feature.properties.OtherTreeName + '<br> Comments: ' + feature.properties.Comments + '<br>' + 
-				'<img src= "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F'+ 
-				feature.properties.Point_and_shoot_Use_mera_to_take_a_photo + '"' +' style="width:200px;height:200px;">' + 
-				'<br>' + '<a href=\"'+ feature.properties.link_009 + '">Plant Information</a>');
-		}
+	// 	if (feature.properties.link_009) {
+	// 		layer.bindPopup('<b><center> Species:' + feature.properties.Species + '<br> Species Name if Other: ' + 
+	// 			feature.properties.OtherTreeName + '<br> Comments: ' + feature.properties.Comments + '<br>' + 
+	// 			'<img src= "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F'+ 
+	// 			feature.properties.Point_and_shoot_Use_mera_to_take_a_photo + '"' +' style="width:200px;height:200px;">' + 
+	// 			'<br>' + '<a href=\"'+ feature.properties.link_009 + '">Plant Information</a>');
+	// 	}
 
 		
-		}});
+	// 	}});
 
-	popupText.addTo(mymap);
+	// popupText.addTo(mymap);
 
 	
 	
