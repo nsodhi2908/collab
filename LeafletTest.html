@@ -184,7 +184,28 @@
 	geojsonLayer.addTo(mymap);
 	
 //PHOTOS FOUND HERE: https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F + Image Name
-//CONTROLLING LINK POP-UPS	
+//CONTROLLING LINK POP-UPS
+
+// var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
+// 		onEachFeature: function (feature, layer) {
+// 			var link_009 = feature.properties.link_009;
+// 			if (link_009 == null) {
+// 				link_009 = "";
+// 			} else {
+// 				var link_009 = feature.properties.link_009;
+// 			};
+
+// 				layer.bindPopup('<b><center> Species:' + feature.properties.Species + '<br> Species Name if Other: ' + feature.properties.OtherTreeName +'<br> Comments: ' + 
+// 					feature.properties.Comments + '<br>' + '<img src= "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F'+ 
+// 					feature.properties.Point_and_shoot_Use_mera_to_take_a_photo + '"' +' style="width:200px;height:200px;">' + '<br>' + '<a href=\"'+ 
+// 					feature.properties.link_009 + '">Plant Information</a>');)
+// 			}   
+// 		}).addTo(map);
+// 	});
+
+
+
+
 	// var popupText = new L.GeoJSON.AJAX("RSTest.geojson", {
 	// 	onEachFeature: function (feature, layer) {
 
