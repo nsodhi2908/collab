@@ -37,7 +37,11 @@
 	<!--Credit Links-->
 	<script type="text/javascript" src="js/leaflet-control-credits.js"></script>
     <link rel="stylesheet" type="text/css" href="js/leaflet-control-credits.css" />
-	
+	<!-- User location-->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+
 
 </head>
 <body>
@@ -127,7 +131,7 @@
 				text: "Fleming College<br/>GIS Students"
 			}).addTo(mymap);
 		
-
+	L.control.locate().addTo(mymap);
 
 	// // USING JQUERY (AJAX)
 	// var settings = {
