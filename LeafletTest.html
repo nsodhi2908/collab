@@ -228,29 +228,29 @@
 	// popupText.addTo(mymap);
 
 	//Search Bar New Method
-	var searchCtrl = L.control.fuseSearch()
-		searchCtrl.addTo(mymap);
+	// var searchCtrl = L.control.fuseSearch()
+	// 	searchCtrl.addTo(mymap);
 
-	searchCtrl.indexFeatures(geojsonLayer, ['Species']);
+	// searchCtrl.indexFeatures(geojsonLayer, ['Species']);
 
-	L.geoJson("RSTest.geojson", {
-    	onEachFeature: function (feature, layer) {
-        	feature.layer = layer;
-    	}
-	});
+	// L.geoJson("RSTest.geojson", {
+    // 	onEachFeature: function (feature, layer) {
+    //     	feature.layer = layer;
+    // 	}
+	// });
 	
 	//Search Bar Start
 
-	// var controlSearch = new L.Control.Search({
-	// 	position:'topright',
-	// 	propertyName: 'Species',		
-	// 	layer: geojsonLayer,
-	// 	initial: false,
-	// 	zoom: 12,
-	// 	marker: false
-	// });
+	var controlSearch = new L.Control.Search({
+		position:'topright',
+		propertyName: 'Species',		
+		layer: geojsonLayer,
+		initial: false,
+		zoom: 12,
+		marker: false
+	});
 
-	// mymap.addControl( controlSearch );
+	mymap.addControl( controlSearch );
 
 
 
