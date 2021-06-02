@@ -186,18 +186,7 @@
   }});
 	geojsonLayer.addTo(mymap);
 
-	//Using current location
-	function onLocationFound(e) {
-		L.marker(e.latlng).addTo(mymap)
-		L.circle(e.latlng).addTo(mymap);
-	}
-
-	function onLocationError(e) {
-		alert(e.message);
-	}
-
-	mymap.on('locationfound', onLocationFound);
-	mymap.on('locationerror', onLocationError);
+	
 
 	
 	
