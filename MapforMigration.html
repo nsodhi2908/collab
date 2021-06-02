@@ -6,38 +6,29 @@
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<!-- <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" /> -->
-
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 	<script type="text/javascript" src="Leaflet\leaflet.ajax.min.js"></script>
-	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script> <!-- Needed -->
+	<script type="text/javascript" src="Leaflet\leaflet.ajax.js"></script> 
 
 	<link rel="stylesheet" href="stylePlay.css">
 	<link rel="stylesheet" href="https://labs.easyblog.it/maps/leaflet/dist/leaflet.css">
-	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
-	<!-- <script type="text/javascript" src="https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson"></script> -->
-	<!-- <script type="text/javascript" src="Leaflet\ajax.js"></script> -->
-	<!-- <script type="text/javascript" src="march30_4.json"></script> -->
-	<!-- <script type="text/javascript" src="Kobo\march30_2.json"></script> -->
 	<script type="text/python" src="request.py"></script>
+    <!-- Rain Viewer Resources-->
 	<link rel="stylesheet" type="text/css" href="navv/rainviewer.css">
 	<script type="text/javascript" src="navv/rain.js"></script>
-	
 	<link rel="stylesheet" type="text/css" href="navv/rainviewer.css">
-    <!--COMPASS FILES NEEDED-->
+    <!--Compass Resources-->
     <script type="text/javascript" src="Riley/Compass.js"></script>
 	<link rel="stylesheet" type="text/css" href="Riley/Compass.css">
-    <!-- Search Bar-->
+    <!-- Search Bar Resources-->
     <script src="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.js"></script>
     <link rel="stylesheet" href="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.css">
-	<!--Credit Links-->
+	<!--Credit Resources-->
 	<script type="text/javascript" src="js/leaflet-control-credits.js"></script>
     <link rel="stylesheet" type="text/css" href="js/leaflet-control-credits.css" />
-	<!-- User location-->
+	<!-- User location Resources-->
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
 	<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
@@ -45,6 +36,8 @@
 
 </head>
 <body>
+
+    <!-- Disclaimer pop-up message START-->
 		<div id="ac-wrapper">
 		<div id="popup">
 			<center>
@@ -64,11 +57,9 @@
 			</center>
 		</div>
 	</div>
-    <!-- 
-        - Owner : Korey Hayes
-        - Date  : Nov 24
-        - From  : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ -->
-    <!--Navbar-->
+    <!-- Disclaimer pop-up message END-->
+
+    <!--Navbar START-->
 	<div class="header">
         <nav class="navbar">
             <a href="index.htm" class="nav-logo">AlphaProductions</a>
@@ -96,25 +87,24 @@
             </div>
         </nav>
 	</div>
-    <!-- End Owner: Korey Hayes -->
+    <!-- Navbar END -->
+
+    <!-- Map div block-->
 <div id="mapid"></div>
+    <!-- Script for Disclaimer Message START-->
 <script type="text/javascript">
 	function PopUp(hideOrshow) {
 		if (hideOrshow == 'show') document.getElementById('ac-wrapper');
 		else document.getElementById('ac-wrapper').style.display = "none";
 	}
 	
-	// window.onload = function () {
-	// 	setTimeout(function () {
-	// 		PopUp('show');
-	// 	}, 5000);
-	// }
 	</script>
-
+    <!-- Script for Disclaimer Message END-->
 <script>
-
+    // Creating Leaflet Map START
+    //Set Map initial view
 	var mymap = L.map('mapid').setView([44.3, -78.5], 9);
-
+    //Adding basemap tiles 
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
@@ -123,71 +113,20 @@
 		tileSize: 512,
 		zoomOffset: -1
 	}).addTo(mymap);
+    // Creating Leaflet Map END
 
-    //Adding credit Fleming Logo
+    //Adding credit Fleming Logo to bottom corner
 		L.controlCredits({
 				image: "image/FlemingGIS.png",
 				link: "https://flemingcollege.ca/programs/geographic-information-systems-applications-specialist",
 				text: "Fleming College<br/>GIS Students"
 			}).addTo(mymap);
-		
+	
+    // Javascript for user current location
 	L.control.locate().addTo(mymap);
 
-	// // USING JQUERY (AJAX)
-	// var settings = {
-	// "url": "https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson",
-	// "method": "GET",
-	// "timeout": 0,
-	// "headers": {
-	// 	"Access-Control-Allow-Origin": "*",
-	// 	"Authorization": "Basic a29oYXllOkd1bmp1aWNlNTA5"
-	// },
-	// };
-
-	// $.ajax(settings).done(function (response) {
-	// console.log(response);
-	// });
-
-
-	// // USING FETCH
-	// var myHeaders = new Headers();
-	// myHeaders.append("Authorization", "Basic a29oYXllOkd1bmp1aWNlNTA5");
-	// myHeaders.append("Access-Control-Allow-Origin", "*");
-
-	// var requestOptions = {
-	// method: 'GET',
-	// headers: myHeaders,
-	// redirect: 'follow'
-	// };
-
-	// fetch("https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson", requestOptions)
-	// .then(response => response.text())
-	// .then(result => console.log(result))
-	// .catch(error => console.log('error', error));
-
-
-//  //  USING xhr
-// 	var xhr = new XMLHttpRequest();
-// xhr.withCredentials = true;
-
-// xhr.addEventListener("readystatechange", function() {
-//   if(this.readyState === 4) {
-//     console.log(this.responseText);
-//   }
-// });
-
-// xhr.open("GET", "https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson");
-// xhr.setRequestHeader("Authorization", "Basic a29oYXllOkd1bmp1aWNlNTA5");
-
-// xhr.send();
-	//var getImage = geojson.feature.properties.Point_and_shoot_Use_mera_to_take_a_photo;
-	//var imageURL = "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F";
-	//var fullImageURL = imageURL.concat(getImage);
-
-	//var geojson = L.geoJSON("RSTest.geojson");
-
-	// '<img src="'+ feature.properties.Picture +'" style="width:100px;height:100px;">'
-	
+    // AJAX method of adding Geojson points from file, with pop-ups 
+    //pop-ups display: Species name, Other name, Comments, Images and a link to resources pages
 	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
 		onEachFeature: function (feature, layer) {
 			layer.bindPopup('<b><center> Species:' + feature.properties.Species + '<br> Species Name if Other: ' + feature.properties.OtherTreeName +
@@ -196,150 +135,13 @@
 			feature.properties.Upload_or_take_a_pho_of_the_edible_plant + '"' +' style="width:200px;height:200px;">' + '<br>' + 'Click' +
 			'<a target="_blank" href=\"https://rileysweeneyfleming.github.io/CollabWebPage/index.html' + '"> HERE</a>' + ' for plant info, recipes and harvesting info'); 
 // 				
-				
+	//Add points and pop-ups to map			
   }});
 	geojsonLayer.addTo(mymap);
 
 	
-
-	
-	
-//PHOTOS FOUND HERE: https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F + Image Name
-//CONTROLLING LINK POP-UPS
-
-// var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
-// 		onEachFeature: function (feature, layer) {
-// 			var link_009 = feature.properties.link_009;
-// 			if (link_009 == null) {
-// 				link_009 = "";
-// 			} else {
-// 				var link_009 = feature.properties.link_009;
-// 			};
-
-// 				layer.bindPopup('<b><center> Species:' + feature.properties.Species + '<br> Species Name if Other: ' + feature.properties.OtherTreeName +'<br> Comments: ' + 
-// 					feature.properties.Comments + '<br>' + '<img src= "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F'+ 
-// 					feature.properties.Point_and_shoot_Use_mera_to_take_a_photo + '"' +' style="width:200px;height:200px;">' + '<br>' + '<a href=\"'+ 
-// 					feature.properties.link_009 + '">Plant Information</a>');)
-// 			}   
-// 		}).addTo(map);
-// 	});
-
-
-
-
-	// var popupText = new L.GeoJSON.AJAX("RSTest.geojson", {
-	// 	onEachFeature: function (feature, layer) {
-
-	// 	if (feature.properties.link_009) {
-	// 		layer.bindPopup('<b><center> Species:' + feature.properties.Species + '<br> Species Name if Other: ' + 
-	// 			feature.properties.OtherTreeName + '<br> Comments: ' + feature.properties.Comments + '<br>' + 
-	// 			'<img src= "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F'+ 
-	// 			feature.properties.Point_and_shoot_Use_mera_to_take_a_photo + '"' +' style="width:200px;height:200px;">' + 
-	// 			'<br>' + '<a href=\"'+ feature.properties.link_009 + '">Plant Information</a>');
-	// 	}
-
-		
-	// 	}});
-
-	// popupText.addTo(mymap);
-
-	// 	// Search Bar Method 3
-	// var searchControl = new L.Control.Search({
-	// 	layer: geojsonLayer,
-	// 	propertyName: 'Species',
-	// 	marker: false,
-	// 	circleLocation: false
-	// 	}
-	// });
-
-	// searchControl.on('search:locationfound', function(e) {
-		
-	// 	//console.log('search:locationfound', );
-
-	// 	//map.removeLayer(this._markerSearch)
-
-	// 	e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
-	// 	if(e.layer._popup)
-	// 		e.layer.openPopup();
-
-	// }).on('search:collapsed', function(e) {
-
-	// 	geojsonLayer.eachLayer(function(layer) {	//restore feature color
-	// 		geojsonLayer.resetStyle(layer);
-	// 	});	
-	// });
-	
-	// mymap.addControl( searchControl );  //inizialize search control
-	
-	
-	// 	var searchControl = new L.Control.Search({
-    // 	layer: geojsonLayer,
-    // 	propertyName: 'Species',
-    // 	circleLocation: false
-	// });
-
-	// searchControl.on('search_locationfound', function (e) {
-
-	// 	e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
-	// 	if (e.layer._popup) 
-	// 		e.layer.openPopup();
-
-	// }).on('search_collapsed', function (e) {
-
-    // geojsonLayer.eachLayer(function (layer) { //restore feature color
-    //     geojsonLayer.resetStyle(layer);
-   	//  });
-	// });
-
-	// mymap.addControl(searchControl); //inizialize search control
-
-
-
-
-	//Search Bar Newer Method 2
-	// var fuse = new Fuse(geojsonLayer.features, {
-	// 	keys: [
-	// 		'properties.Species',
-	// 		//'properties.operator'
-	// 	]
-	// });
-
-	// L.control.search({
-	// 	layer: geojsonLayer,
-	// 	propertyName: 'Species',
-	// 	filterData: function(text, records) {
-	// 		var jsons = fuse.search(text),
-	// 			ret = {}, key;
-			
-	// 		for(var i in jsons) {
-	// 			key = jsons[i].properties.Species;
-	// 			ret[ key ]= records[key];
-	// 		}
-
-	// 		console.log(jsons,ret);
-	// 		return ret;
-	// 	}
-	// })
-	// .on('search:locationfound', function(e) {
-	// 	e.layer.openPopup();
-	// })
-	// .addTo(mymap);
-
-
-	//Search Bar New Method
-	// var searchCtrl = L.control.fuseSearch()
-	// 	searchCtrl.addTo(mymap);
-
-	// searchCtrl.indexFeatures(geojsonLayer, ['Species']);
-
-	// L.geoJson("RSTest.geojson", {
-    // 	onEachFeature: function (feature, layer) {
-    //     	feature.layer = layer;
-    // 	}
-	// });
-	
-	//Search Bar Start
-
+	//Search Bar START
+    // Will open most recent point added with selected species name
 	var controlSearch = new L.Control.Search({
 		position:'topright',
 		propertyName: 'Species',		
@@ -357,29 +159,11 @@
 
 	mymap.addControl( controlSearch );
 
-	
+	//Search Bar END
 
-
-//=isInside2
-//It just shows that there was a photo saved and the name of the file. If we can find the location of the saved data this would be way better.
-//the geoJSON stores only text
-// geographic java script object "notation"
-
-
-	// var layerGroup = L.geoJSON.AJAX("Kobo/march30_2.geojson", {
-  	// onEachFeature: function (feature, layer) {
-    // layer.bindPopup('<h1>'+feature.Tree_Type+'</h1>');
-  	// }
-	// });
-	// layerGroup.addTo(mymap);
-
-	// var layerGroup = L.geoJSON.AJAX(data, {
- 	// onEachFeature: function (feature, layer) {
-    // layer.bindPopup('<h1>'+feature.properties.f1+'</h1><p>name: '+feature.properties.f2+'</p>');
- 	//  }
-	// }).addTo(mymap);
+    // Click on Map pop-up START
 	var popup = L.popup();
-
+    //Pop-up will display link to data collection form when user clicks the map
 	function onMapClick(e) {
 		popup
 			.setLatLng(e.latlng)
@@ -389,7 +173,9 @@
 	}
 
 	mymap.on('click', onMapClick);
+    // Click on Map pop-up END
 
+    // Rain viewer widget START
 	var rainviewer = L.control.rainviewer({
 			position: 'topleft',
 			nextButtonText: '>',
@@ -401,36 +187,17 @@
 			opacity: 0.3
 		});
 		rainviewer.addTo(mymap);
-
+    // Rain viewer widget END
 	
 
 	
-
+    // Compass widget script START
 	var comp = new L.Control.Compass({autoActive: true, showDigit:true});
 
 	mymap.addControl(comp);
-
-
-
-	// var searchControl = new L.Control.Search({
-	// 	layer: geojsonLayer,
-	// 	propertyName: 'Species',
-	// 	marker: false,
-	// 	moveToLocation: function(latlng, title, map) {
-	// 		//map.fitBounds( latlng.layer.getBounds() );
-	// 		var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-  	// 		map.setView(latlng, zoom); // access the zoom
-	// 	}
-	// 	});
-	// map.addControl( searchControl );  //inizialize search control
-	// Error Occurs: L.Control.Search is not a constructor
+    // Compass widget script END
 
 </script>
 </body>
 <script src="koreystuff/js.js"></script>
 </html>
-<!--It looks like we didn't need either of these
-Default is sufficient apparently-->
-<!-- Korey's API Token: 530f6a7248efa245bedc69e1652a7940670c8446 -->
-<!-- from website token - >  pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw
-    generated token - >      pk.eyJ1Ijoicmlsc3dlZW4iLCJhIjoiY2ttbnoyYmhyMDFueDJucmt1eXFtdzFzaSJ9.6_fVTtxydb8Boi0JX_wDdQ -->
