@@ -185,6 +185,21 @@
 				
   }});
 	geojsonLayer.addTo(mymap);
+
+	//Using current location
+	function onLocationFound(e) {
+		L.marker(e.latlng).addTo(mymap)
+		L.circle(e.latlng).addTo(mymap);
+	}
+
+	function onLocationError(e) {
+		alert(e.message);
+	}
+
+	mymap.on('locationfound', onLocationFound);
+	mymap.on('locationerror', onLocationError);
+
+	mymap.locate({setView: true, maxZoom: 16});
 	
 //PHOTOS FOUND HERE: https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F + Image Name
 //CONTROLLING LINK POP-UPS
