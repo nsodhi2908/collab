@@ -117,7 +117,15 @@
 		zoomOffset: -1
 	}).addTo(mymap);
 
+    //Adding credit Fleming Logo
+	L.controlCredits({
+        	image: FlemingGIS.png,
+        	link: "https://flemingcollege.ca/programs/geographic-information-systems-applications-specialist",
+        	text: "Fleming College<br/>GIS Students"
+        }).addTo(mymap);
     
+
+
 	// // USING JQUERY (AJAX)
 	// var settings = {
 	// "url": "https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson",
