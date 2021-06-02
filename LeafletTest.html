@@ -225,33 +225,33 @@
 
 	// popupText.addTo(mymap);
 
-		// Search Bar Method 3
-	var searchControl = new L.Control.Search({
-		layer: geojsonLayer,
-		propertyName: 'Species',
-		marker: false,
-		circleLocation: false
-		}
-	});
+	// 	// Search Bar Method 3
+	// var searchControl = new L.Control.Search({
+	// 	layer: geojsonLayer,
+	// 	propertyName: 'Species',
+	// 	marker: false,
+	// 	circleLocation: false
+	// 	}
+	// });
 
-	searchControl.on('search:locationfound', function(e) {
+	// searchControl.on('search:locationfound', function(e) {
 		
-		//console.log('search:locationfound', );
+	// 	//console.log('search:locationfound', );
 
-		//map.removeLayer(this._markerSearch)
+	// 	//map.removeLayer(this._markerSearch)
 
-		e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
-		if(e.layer._popup)
-			e.layer.openPopup();
+	// 	e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
+	// 	if(e.layer._popup)
+	// 		e.layer.openPopup();
 
-	}).on('search:collapsed', function(e) {
+	// }).on('search:collapsed', function(e) {
 
-		geojsonLayer.eachLayer(function(layer) {	//restore feature color
-			geojsonLayer.resetStyle(layer);
-		});	
-	});
+	// 	geojsonLayer.eachLayer(function(layer) {	//restore feature color
+	// 		geojsonLayer.resetStyle(layer);
+	// 	});	
+	// });
 	
-	mymap.addControl( searchControl );  //inizialize search control
+	// mymap.addControl( searchControl );  //inizialize search control
 	
 	
 	// 	var searchControl = new L.Control.Search({
@@ -322,16 +322,17 @@
 	
 	//Search Bar Start
 
-	// var controlSearch = new L.Control.Search({
-	// 	position:'topright',
-	// 	propertyName: 'Species',		
-	// 	layer: geojsonLayer,
-	// 	initial: false,
-	// 	zoom: 12,
-	// 	marker: false
-	// });
+	var controlSearch = new L.Control.Search({
+		position:'topright',
+		propertyName: 'Species',		
+		layer: geojsonLayer,
+		initial: false,
+		zoom: 12,
+		marker: false,
+		circleLocation: false
+	});
 
-	// mymap.addControl( controlSearch );
+	mymap.addControl( controlSearch );
 
 	
 
