@@ -246,8 +246,8 @@
 
 	}).on('search:collapsed', function(e) {
 
-		featuresLayer.eachLayer(function(layer) {	//restore feature color
-			featuresLayer.resetStyle(layer);
+		geojsonLayer.eachLayer(function(layer) {	//restore feature color
+			geojsonLayer.resetStyle(layer);
 		});	
 	});
 	
