@@ -35,9 +35,7 @@
     <script src="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.js"></script>
     <link rel="stylesheet" href="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.css">
 	<!--New Search Bar Method-->
-	<script src="js/fuse.js"></script>
-        <script src="js/leaflet.fusesearch.js"></script>
-        <link rel="stylesheet" href="js/leaflet.fusesearch.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/1.2.2/fuse.min.js"></script>
 
 </head>
 <body>
@@ -227,6 +225,36 @@
 
 	// popupText.addTo(mymap);
 
+	//Search Bar Newer Method 2
+	var fuse = new Fuse(geojsonLayer.features, {
+		keys: [
+			'properties.Species',
+			//'properties.operator'
+		]
+	});
+
+	L.control.search({
+		layer: geojsonLayer,
+		propertyName: 'Species',
+		filterData: function(text, records) {
+			var jsons = fuse.search(text),
+				ret = {}, key;
+			
+			for(var i in jsons) {
+				key = jsons[i].properties.Species;
+				ret[ key ]= records[key];
+			}
+
+			console.log(jsons,ret);
+			return ret;
+		}
+	})
+	.on('search:locationfound', function(e) {
+		e.layer.openPopup();
+	})
+	.addTo(map);
+
+
 	//Search Bar New Method
 	// var searchCtrl = L.control.fuseSearch()
 	// 	searchCtrl.addTo(mymap);
@@ -241,16 +269,16 @@
 	
 	//Search Bar Start
 
-	var controlSearch = new L.Control.Search({
-		position:'topright',
-		propertyName: 'Species',		
-		layer: geojsonLayer,
-		initial: false,
-		zoom: 12,
-		marker: false
-	});
+	// var controlSearch = new L.Control.Search({
+	// 	position:'topright',
+	// 	propertyName: 'Species',		
+	// 	layer: geojsonLayer,
+	// 	initial: false,
+	// 	zoom: 12,
+	// 	marker: false
+	// });
 
-	mymap.addControl( controlSearch );
+	// mymap.addControl( controlSearch );
 
 
 
