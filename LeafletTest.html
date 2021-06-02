@@ -183,14 +183,14 @@
 	//var geojson = L.geoJSON("RSTest.geojson");
 
 	// '<img src="'+ feature.properties.Picture +'" style="width:100px;height:100px;">'
-	var popup2 = L.responsivePopup({ hasTip: true, autoPan: false, offset: [15, 25]}).setContent('<b><center> Species:' + feature.properties.Species + '<br> Species Name if Other: ' + feature.properties.OtherTreeName +
+	
+	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
+		onEachFeature: function (feature, layer) {
+			layer.bindPopup('<b><center> Species:' + feature.properties.Species + '<br> Species Name if Other: ' + feature.properties.OtherTreeName +
 			'<br> Comments: ' + feature.properties.Comments + '<br>' + 
 			'<img src= "https://kc.humanitarianresponse.info/media/original?media_file=rilsween%2Fattachments%2F'+ 
 			feature.properties.Upload_or_take_a_pho_of_the_edible_plant + '"' +' style="width:200px;height:200px;">' + '<br>' + 'Click' +
-			'<a target="_blank" href=\"https://rileysweeneyfleming.github.io/CollabWebPage/index.html' + '"> HERE</a>' + ' for plant info, recipes and harvesting info');
-	var geojsonLayer = new L.GeoJSON.AJAX("RSTest.geojson", {
-		onEachFeature: function (feature, layer) {
-			layer.bindPopup(popup2); 
+			'<a target="_blank" href=\"https://rileysweeneyfleming.github.io/CollabWebPage/index.html' + '"> HERE</a>' + ' for plant info, recipes and harvesting info'); 
 // 				
 				
   }});
