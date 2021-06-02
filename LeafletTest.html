@@ -227,27 +227,53 @@
 
 		// Search Bar Method 3
 	var searchControl = new L.Control.Search({
-    	layer: geojsonLayer,
-    	propertyName: 'Species',
-    	circleLocation: false
+		layer: featuresLayer,
+		propertyName: 'Species',
+		marker: false,
+		circleLocation: false
+		}
 	});
 
-	searchControl.on('search_locationfound', function (e) {
+	searchControl.on('search:locationfound', function(e) {
+		
+		//console.log('search:locationfound', );
 
-    e.layer.setStyle({
-        fillColor: '#3f0',
-        color: '#0f0'
-    });
-    if (e.layer._popup) e.layer.openPopup();
+		//map.removeLayer(this._markerSearch)
 
-	}).on('search_collapsed', function (e) {
+		e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
+		if(e.layer._popup)
+			e.layer.openPopup();
 
-    geojsonLayer.eachLayer(function (layer) { //restore feature color
-        geojsonLayer.resetStyle(layer);
-   	 });
+	}).on('search:collapsed', function(e) {
+
+		featuresLayer.eachLayer(function(layer) {	//restore feature color
+			featuresLayer.resetStyle(layer);
+		});	
 	});
+	
+	mymap.addControl( searchControl );  //inizialize search control
+	
+	
+	// 	var searchControl = new L.Control.Search({
+    // 	layer: geojsonLayer,
+    // 	propertyName: 'Species',
+    // 	circleLocation: false
+	// });
 
-	mymap.addControl(searchControl); //inizialize search control
+	// searchControl.on('search_locationfound', function (e) {
+
+	// 	e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
+	// 	if (e.layer._popup) 
+	// 		e.layer.openPopup();
+
+	// }).on('search_collapsed', function (e) {
+
+    // geojsonLayer.eachLayer(function (layer) { //restore feature color
+    //     geojsonLayer.resetStyle(layer);
+   	//  });
+	// });
+
+	// mymap.addControl(searchControl); //inizialize search control
 
 
 
