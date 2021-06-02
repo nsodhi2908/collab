@@ -226,33 +226,33 @@
 	// popupText.addTo(mymap);
 
 	//Search Bar Newer Method 2
-	var fuse = new Fuse(geojsonLayer.features, {
-		keys: [
-			'properties.Species',
-			//'properties.operator'
-		]
-	});
+	// var fuse = new Fuse(geojsonLayer.features, {
+	// 	keys: [
+	// 		'properties.Species',
+	// 		//'properties.operator'
+	// 	]
+	// });
 
-	L.control.search({
-		layer: geojsonLayer,
-		propertyName: 'Species',
-		filterData: function(text, records) {
-			var jsons = fuse.search(text),
-				ret = {}, key;
+	// L.control.search({
+	// 	layer: geojsonLayer,
+	// 	propertyName: 'Species',
+	// 	filterData: function(text, records) {
+	// 		var jsons = fuse.search(text),
+	// 			ret = {}, key;
 			
-			for(var i in jsons) {
-				key = jsons[i].properties.Species;
-				ret[ key ]= records[key];
-			}
+	// 		for(var i in jsons) {
+	// 			key = jsons[i].properties.Species;
+	// 			ret[ key ]= records[key];
+	// 		}
 
-			console.log(jsons,ret);
-			return ret;
-		}
-	})
-	.on('search:locationfound', function(e) {
-		e.layer.openPopup();
-	})
-	.addTo(mymap);
+	// 		console.log(jsons,ret);
+	// 		return ret;
+	// 	}
+	// })
+	// .on('search:locationfound', function(e) {
+	// 	e.layer.openPopup();
+	// })
+	// .addTo(mymap);
 
 
 	//Search Bar New Method
