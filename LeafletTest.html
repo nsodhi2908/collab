@@ -225,6 +225,33 @@
 
 	// popupText.addTo(mymap);
 
+		// Search Bar Method 3
+	var searchControl = new L.Control.Search({
+    	layer: geojsonLayer,
+    	propertyName: 'Species',
+    	circleLocation: false
+	});
+
+	searchControl.on('search_locationfound', function (e) {
+
+    e.layer.setStyle({
+        fillColor: '#3f0',
+        color: '#0f0'
+    });
+    if (e.layer._popup) e.layer.openPopup();
+
+	}).on('search_collapsed', function (e) {
+
+    geojsonLayer.eachLayer(function (layer) { //restore feature color
+        geojsonLayer.resetStyle(layer);
+   	 });
+	});
+
+	mymap.addControl(searchControl); //inizialize search control
+
+
+
+
 	//Search Bar Newer Method 2
 	// var fuse = new Fuse(geojsonLayer.features, {
 	// 	keys: [
@@ -280,7 +307,7 @@
 
 	// mymap.addControl( controlSearch );
 
-
+	
 
 
 //=isInside2
