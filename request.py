@@ -4,11 +4,11 @@ import geojson, json
 from shapely.geometry import shape
 from shapely.geometry.point import Point
 
-url = "https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson"
+url = "https://kobo.humanitarianresponse.info/api/v2/assets//anpv3H2CEtV6PzAcyfDgE6/data/?format=geojson"
 
 payload={}
 headers = {
-  'Authorization': 'Basic a29oYXllOkd1bmp1aWNlNTA5'
+  'Authorization': 'Basic ZnJ1aXR0cmVlbWFwOkZvb2RTZWN1cml0eTIwMjE='
 }
 
 response = requests.request('GET', url, headers=headers, data=payload)
