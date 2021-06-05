@@ -97,7 +97,7 @@
 
     // AJAX method of adding Geojson points from file, with pop-ups 
     //pop-ups display: Species name, Other name, Comments, Images and a link to resources pages
-	var geojsonLayer = new L.GeoJSON.AJAX("Kobo/geoJSON.geojson", {
+	var geojsonLayer = new L.GeoJSON.AJAX("validation/result.geojson", {
 		onEachFeature: function (feature, layer) {
 			layer.bindPopup('<b><center> Species:' + feature.properties.Species + '<br> Species Name if Other: ' + feature.properties.OtherTreeName +
 			'<br> Comments: ' + feature.properties.Comments + '<br>' + 
