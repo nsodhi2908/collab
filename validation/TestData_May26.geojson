@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "Fruit Tree Map Data Form",
-"features": [
-{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.547612, 44.537778, 0.0]}, "properties": {"Species": "Apple, Common", "Comments": "This is not an apple. I am a computer", "Public": "Yes, it is located on Public Property!", "_id": 180368969, "_uuid": "1dcf08ad-daf6-4861-8fe4-7e05788c3017", "_submission_time": "2021-05-26T19:26:26", "_status": "submitted_via_web"}},
-{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-78.547479, 44.537848, 0.0]}, "properties": {"Species": "Baked-apple Berry", "Comments": "Tonnes", "Public": "Uknown", "_id": 180369193, "_uuid": "05b09063-f4dd-4659-945a-2259c9a80573", "_submission_time": "2021-05-26T19:27:29", "_status": "submitted_via_web"}}
-]
-}

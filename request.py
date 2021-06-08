@@ -4,22 +4,22 @@ import geojson, json
 from shapely.geometry import shape
 from shapely.geometry.point import Point
 
-# url = "https://kf.kobotoolbox.org/api/v2/assets/ayYd637KWJhM2eSfAKcjFN/data/?format=geojson"
+url = "https://kobo.humanitarianresponse.info/api/v2/assets//anpv3H2CEtV6PzAcyfDgE6/data/?format=geojson"
 
-# payload={}
-# headers = {
-#   'Authorization': 'Basic a29oYXllOkd1bmp1aWNlNTA5'
-# }
+payload={}
+headers = {
+  'Authorization': 'Basic ZnJ1aXR0cmVlbWFwOkZvb2RTZWN1cml0eTIwMjE='
+}
 
-# response = requests.request('GET', url, headers=headers, data=payload)
-# myfile = open(r"Kobo\geoJSON.geojson", "w")
-# myfile.write(response.text)
-# print("done")
+response = requests.request('GET', url, headers=headers, data=payload)
+myfile = open(r"Kobo\geoJSON.geojson", "w")
+myfile.write(response.text)
+print("done")
 
 
 #########################################################################
 badtrees = ["garbage", "Garbage", "Dumpster", "dumpster", "Buckthorn", "Buck Thorn", "Oak", "buckthorn", "buck thorn", "poison", "Poison", "Sumac", "sumac", "Blue Beech", "blue beech"]
-geoPoints = open(r"validation\TestData_May26.geojson", "r")
+geoPoints = open(r"Kobo\geoJSON.geojson", "r")
 criteriaPoints = open(r"validation\polygon.geojson", "r")
 regionPoints = open(r"validation\polygonMinusWater.geojson", "r")
 geodict = json.load(geoPoints)
