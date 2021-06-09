@@ -21,8 +21,8 @@ print("done")
 #########################################################################
 badtrees = ["garbage", "Garbage", "Dumpster", "dumpster", "Buckthorn", "Buck Thorn", "Oak", "buckthorn", "buck thorn", "poison", "Poison", "Sumac", "sumac", "Blue Beech", "blue beech"]
 geoPoints = open(r"validation\kobo.geojson", "r")
-criteriaPoints = open(r"validation\polygon.geojson", "r")
-regionPoints = open(r"validation\polygonMinusWater.geojson", "r")
+criteriaPoints = open(r"polygon.geojson", "r")
+regionPoints = open(r"polygonMinusWater.geojson", "r")
 geodict = json.load(geoPoints)
 criteriadict = json.load(criteriaPoints)
 regiondict = json.load(regionPoints)
