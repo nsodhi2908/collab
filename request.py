@@ -18,14 +18,22 @@ myfile.close()
 print("done")
 
 
+
+
 #########################################################################
+purl = "https://github.com/nsodhi2908/collab/raw/a2acedf583049b995e507b7babd494c0fc4ef94a/polygon.geojson"
+criteriaPoints = requests.request('GET', purl, data=payload)
+cp = criteriaPoints.text
+rurl = "https://github.com/nsodhi2908/collab/raw/a2acedf583049b995e507b7babd494c0fc4ef94a/polygonMinusWater.geojson"
+regionPoints = requests.request('GET', rurl, data=payload)
+rp = regionPoints.text
 badtrees = ["garbage", "Garbage", "Dumpster", "dumpster", "Buckthorn", "Buck Thorn", "Oak", "buckthorn", "buck thorn", "poison", "Poison", "Sumac", "sumac", "Blue Beech", "blue beech"]
 geoPoints = open(r"validation\kobo.geojson", "r")
-criteriaPoints = open(r"polygon.geojson", "r")
-regionPoints = open(r"polygonMinusWater.geojson", "r")
+# criteriaPoints = open(r"https://github.com/nsodhi2908/collab/raw/a2acedf583049b995e507b7babd494c0fc4ef94a/polygon.geojson", "r")
+# regionPoints = open(r"https://github.com/nsodhi2908/collab/raw/a2acedf583049b995e507b7babd494c0fc4ef94a/polygonMinusWater.geojson", "r")
 geodict = json.load(geoPoints)
-criteriadict = json.load(criteriaPoints)
-regiondict = json.load(regionPoints)
+criteriadict = json.load(cp)
+regiondict = json.load(rp)
 resultPoints = open(r"validation\result.geojson", "w")
 
 feature_collection = {"type": "FeatureCollection",
